@@ -1,1 +1,890 @@
-keep
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advertise Your Restaurant in Honolulu | RestaurantHonolulu.com</title>
+<meta name="description" content="Reach thousands of hungry visitors searching for the best restaurants in Honolulu. Advertising on RestaurantHonolulu.com starts at just $25/month. Call 1-800-481-8638.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://restauranthonolulu.com/advertise/">
+<link rel="icon" href="https://raw.githubusercontent.com/seniorhelper/Restauranthonolulu.com/main/images/restaurants-honolulu-favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --coral: #E8603C; --coral-dark: #C94E2D;
+    --navy: #0A0F1E; --deep: #141c2e;
+    --ocean: #006B8F; --teal: #2EC4B6;
+    --gold: #D4A843; --gold-pale: #F5EDD8;
+    --charcoal: #1A1A2E; --mid: #5A5A72;
+    --light: #F0EDE8; --warm: #FDFAF5;
+    --green-chart: #22c55e; --blue-chart: #3b82f6;
+    --display: 'Playfair Display', Georgia, serif;
+    --body: 'DM Sans', sans-serif;
+    --mono: 'Space Grotesk', sans-serif;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--body); color:var(--charcoal); background:var(--warm); line-height:1.7; overflow-x:hidden; }
+
+  /* HEADER */
+  header { position:fixed; top:0; left:0; right:0; z-index:1000; background:#fff; box-shadow:0 2px 20px rgba(0,0,0,.08); height:72px; display:flex; align-items:center; padding:0 24px; }
+  .header-inner { max-width:1200px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .logo img { width:220px; height:auto; }
+  nav { display:flex; gap:22px; align-items:center; }
+  nav a { text-decoration:none; color:var(--charcoal); font-size:14px; font-weight:500; transition:color .2s; }
+  nav a:hover, nav a.active { color:var(--coral); }
+  .nav-cta { background:var(--coral); color:#fff !important; padding:9px 18px; border-radius:6px; font-weight:600 !important; }
+  .nav-cta:hover { background:var(--coral-dark) !important; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--charcoal); border-radius:2px; }
+  .mobile-menu { display:none; position:fixed; top:72px; left:0; right:0; background:#fff; z-index:999; padding:20px 24px 30px; box-shadow:0 8px 30px rgba(0,0,0,.12); flex-direction:column; gap:16px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { text-decoration:none; color:var(--charcoal); font-size:16px; font-weight:500; padding:8px 0; border-bottom:1px solid var(--light); }
+
+  /* HERO */
+  .hero {
+    margin-top:72px;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2e45 60%, #0d3d5e 100%);
+    padding:80px 24px 70px;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(232,96,60,.12) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 80%, rgba(46,196,182,.08) 0%, transparent 55%);
+  }
+  /* Animated dot grid */
+  .hero-grid {
+    position:absolute; inset:0; opacity:.06;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .hero-content { position:relative; z-index:2; max-width:800px; margin:0 auto; }
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    color:var(--teal); margin-bottom:20px;
+  }
+  .hero h1 { font-family:var(--display); font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; color:#fff; line-height:1.1; margin-bottom:16px; }
+  .hero h1 em { font-style:italic; color:var(--gold); }
+  .hero-sub { font-size:clamp(.95rem,2vw,1.1rem); color:rgba(255,255,255,.75); max-width:600px; margin:0 auto 36px; line-height:1.75; }
+
+  /* HERO CTA BLOCK */
+  .hero-cta-block {
+    display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:36px;
+  }
+  .btn-call {
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--coral); color:#fff;
+    padding:16px 32px; border-radius:10px;
+    font-weight:700; font-size:1.1rem; text-decoration:none;
+    transition:all .2s; letter-spacing:.3px;
+    box-shadow:0 4px 20px rgba(232,96,60,.35);
+  }
+  .btn-call:hover { background:var(--coral-dark); transform:translateY(-2px); box-shadow:0 8px 28px rgba(232,96,60,.45); }
+  .btn-call .btn-icon { font-size:1.3rem; }
+
+  .btn-email {
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:2px solid rgba(255,255,255,.35);
+    color:#fff; padding:16px 32px; border-radius:10px;
+    font-weight:700; font-size:1rem; text-decoration:none;
+    transition:all .2s; backdrop-filter:blur(4px);
+  }
+  .btn-email:hover { background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.6); }
+
+  .hero-price-pill {
+    display:inline-block;
+    background:rgba(212,168,67,.15); border:1px solid rgba(212,168,67,.4);
+    color:var(--gold); font-family:var(--mono); font-size:12px; font-weight:700;
+    padding:8px 20px; border-radius:20px; letter-spacing:.5px;
+  }
+
+  /* PAGE WRAP */
+  .page-wrap { max-width:1100px; margin:0 auto; padding:64px 24px 80px; }
+
+  /* SECTION LABELS */
+  .section-label { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--coral); display:block; margin-bottom:8px; }
+  .section-h2 { font-family:var(--display); font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:800; color:var(--charcoal); line-height:1.18; margin-bottom:14px; }
+  .section-intro { font-size:15px; color:var(--mid); max-width:680px; line-height:1.8; margin-bottom:40px; }
+
+  /* STAT STRIP */
+  .stat-strip {
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    background:#fff; border-radius:16px;
+    box-shadow:0 4px 24px rgba(0,0,0,.08); overflow:hidden;
+    margin-bottom:64px; border:1px solid rgba(0,0,0,.06);
+  }
+  .stat-box {
+    padding:28px 20px; text-align:center; border-right:1px solid var(--light);
+    transition:background .2s;
+  }
+  .stat-box:last-child { border-right:none; }
+  .stat-box:hover { background:rgba(232,96,60,.03); }
+  .stat-num { font-family:var(--display); font-size:2.6rem; font-weight:900; color:var(--coral); display:block; line-height:1; }
+  .stat-label { font-size:12.5px; color:var(--mid); margin-top:6px; line-height:1.4; }
+  .stat-source { font-size:10px; color:var(--light); margin-top:4px; font-style:italic; color:#aaa; }
+
+  /* WHY ADVERTISE — TWO COLUMN */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:64px; align-items:center; }
+  .two-col p { font-size:15px; color:var(--mid); line-height:1.8; margin-bottom:14px; }
+  .two-col h2 { font-family:var(--display); font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; color:var(--charcoal); margin-bottom:16px; line-height:1.22; }
+  .two-col strong { color:var(--charcoal); font-weight:600; }
+
+  /* INTERACTIVE CHART — Real data, canvas-drawn */
+  .chart-card {
+    background:#fff; border-radius:16px; padding:32px;
+    box-shadow:0 4px 24px rgba(0,0,0,.08); border:1px solid rgba(0,0,0,.06);
+  }
+  .chart-title { font-family:var(--display); font-size:1.05rem; font-weight:700; color:var(--charcoal); margin-bottom:4px; }
+  .chart-subtitle { font-size:12px; color:var(--mid); margin-bottom:20px; line-height:1.4; }
+  #roiChart { width:100%; max-height:260px; }
+  .chart-legend { display:flex; gap:20px; margin-top:14px; flex-wrap:wrap; }
+  .legend-item { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--mid); }
+  .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .chart-source { font-size:10px; color:#aaa; margin-top:10px; font-style:italic; }
+
+  /* SECOND CHART — bar chart (new customers) */
+  .charts-row { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:64px; }
+
+  /* AD PACKAGES */
+  .packages-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px; }
+
+  .package-card {
+    background:#fff; border-radius:16px; padding:32px 26px;
+    border:2px solid var(--light);
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+    transition:transform .2s, box-shadow .2s;
+    position:relative; text-align:center;
+  }
+  .package-card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.11); }
+  .package-card.featured { border-color:var(--coral); box-shadow:0 8px 32px rgba(232,96,60,.18); }
+
+  .pkg-best { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--coral); color:#fff; font-family:var(--mono); font-size:10px; font-weight:800; letter-spacing:1.5px; padding:4px 16px; border-radius:20px; white-space:nowrap; }
+  .pkg-icon { font-size:36px; margin-bottom:14px; display:block; }
+  .pkg-name { font-family:var(--display); font-size:1.2rem; font-weight:800; color:var(--charcoal); margin-bottom:6px; }
+  .pkg-price { font-family:var(--mono); font-size:2rem; font-weight:700; color:var(--coral); margin-bottom:4px; }
+  .pkg-per { font-size:12px; color:var(--mid); margin-bottom:18px; }
+  .pkg-features { list-style:none; text-align:left; margin-bottom:24px; }
+  .pkg-features li { font-size:13.5px; color:var(--mid); padding:7px 0; border-bottom:1px solid var(--light); display:flex; align-items:flex-start; gap:8px; }
+  .pkg-features li:last-child { border-bottom:none; }
+  .pkg-check { color:var(--teal); font-weight:700; flex-shrink:0; }
+  .pkg-btn { display:block; padding:13px; border-radius:8px; font-weight:700; font-size:14px; text-decoration:none; transition:all .2s; text-align:center; }
+  .pkg-btn-outline { border:2px solid var(--coral); color:var(--coral); }
+  .pkg-btn-outline:hover { background:var(--coral); color:#fff; }
+  .pkg-btn-filled { background:var(--coral); color:#fff; }
+  .pkg-btn-filled:hover { background:var(--coral-dark); }
+
+  /* PLACEMENT PREVIEWS */
+  .placements-section { margin-bottom:64px; }
+  .placements-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+  .placement-card { background:#fff; border-radius:12px; padding:24px; border:1px solid rgba(0,0,0,.07); box-shadow:0 3px 14px rgba(0,0,0,.06); }
+  .placement-icon { font-size:28px; margin-bottom:10px; display:block; }
+  .placement-name { font-family:var(--display); font-size:1rem; font-weight:700; color:var(--charcoal); margin-bottom:6px; }
+  .placement-desc { font-size:13px; color:var(--mid); line-height:1.6; margin-bottom:12px; }
+  .placement-pages { font-size:11px; font-family:var(--mono); font-weight:600; color:var(--coral); text-transform:uppercase; letter-spacing:.5px; }
+
+  /* AI SECTION */
+  .ai-section {
+    background:linear-gradient(135deg, var(--navy) 0%, var(--deep) 100%);
+    border-radius:20px; padding:52px 48px; margin-bottom:64px;
+    position:relative; overflow:hidden;
+  }
+  .ai-section::before {
+    content:'AI';
+    position:absolute; right:-20px; top:-20px;
+    font-family:var(--display); font-size:200px; font-weight:900;
+    color:rgba(255,255,255,.03); line-height:1;
+  }
+  .ai-section-inner { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; position:relative; z-index:1; }
+  .ai-left h2 { font-family:var(--display); font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; color:#fff; margin-bottom:14px; line-height:1.2; }
+  .ai-left h2 em { font-style:italic; color:var(--teal); }
+  .ai-left p { font-size:14.5px; color:rgba(255,255,255,.72); line-height:1.8; margin-bottom:14px; }
+  .ai-engines { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+  .ai-engine { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#fff; font-family:var(--mono); font-size:11px; font-weight:600; padding:6px 14px; border-radius:20px; }
+  .ai-stat-box { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px; margin-bottom:16px; }
+  .ai-stat-box:last-child { margin-bottom:0; }
+  .ai-stat-num { font-family:var(--display); font-size:2rem; font-weight:900; color:var(--teal); }
+  .ai-stat-label { font-size:13px; color:rgba(255,255,255,.65); margin-top:4px; line-height:1.5; }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    background:#fff; border-radius:20px; padding:52px 48px;
+    box-shadow:0 8px 40px rgba(0,0,0,.08); border:1px solid rgba(0,0,0,.06);
+    margin-bottom:48px; text-align:center;
+  }
+  .contact-section h2 { font-family:var(--display); font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:800; color:var(--charcoal); margin-bottom:12px; }
+  .contact-section p { font-size:15px; color:var(--mid); max-width:560px; margin:0 auto 36px; line-height:1.8; }
+
+  .contact-main-cta { display:flex; flex-direction:column; align-items:center; gap:16px; margin-bottom:36px; }
+
+  .btn-call-big {
+    display:inline-flex; align-items:center; gap:14px;
+    background:var(--coral); color:#fff;
+    padding:20px 44px; border-radius:12px;
+    font-weight:800; font-size:1.4rem; text-decoration:none;
+    transition:all .2s; letter-spacing:.3px;
+    box-shadow:0 6px 28px rgba(232,96,60,.35);
+  }
+  .btn-call-big:hover { background:var(--coral-dark); transform:translateY(-3px); box-shadow:0 12px 36px rgba(232,96,60,.45); }
+  .btn-call-big .call-icon { font-size:1.6rem; animation:ring 2.5s ease-in-out infinite; }
+  @keyframes ring {
+    0%,100% { transform:rotate(0deg); }
+    10% { transform:rotate(-15deg); }
+    20% { transform:rotate(15deg); }
+    30% { transform:rotate(-10deg); }
+    40% { transform:rotate(10deg); }
+    50% { transform:rotate(0deg); }
+  }
+
+  .btn-email-big {
+    display:inline-flex; align-items:center; gap:12px;
+    background:transparent; border:2px solid var(--ocean);
+    color:var(--ocean); padding:15px 36px; border-radius:12px;
+    font-weight:700; font-size:1rem; text-decoration:none;
+    transition:all .2s;
+  }
+  .btn-email-big:hover { background:var(--ocean); color:#fff; }
+
+  .contact-divider { display:flex; align-items:center; gap:16px; color:var(--mid); font-size:13px; margin:8px 0; }
+  .contact-divider::before, .contact-divider::after { content:''; flex:1; height:1px; background:var(--light); }
+
+  .contact-promise { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:36px; padding-top:36px; border-top:1px solid var(--light); text-align:center; }
+  .promise-item { }
+  .promise-icon { font-size:28px; display:block; margin-bottom:8px; }
+  .promise-title { font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:4px; }
+  .promise-desc { font-size:12.5px; color:var(--mid); line-height:1.5; }
+
+  /* FOOTER */
+  footer { background:var(--charcoal); color:rgba(255,255,255,.55); padding:56px 24px 28px; }
+  .footer-inner { max-width:1200px; margin:0 auto; }
+  .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:36px; margin-bottom:44px; }
+  .footer-about h3 { color:#fff; font-size:1rem; font-weight:700; margin-bottom:10px; }
+  .footer-about p { font-size:13px; line-height:1.7; color:rgba(255,255,255,.4); }
+  .footer-col h4 { color:rgba(255,255,255,.7); font-weight:600; font-size:12px; margin-bottom:14px; letter-spacing:.5px; text-transform:uppercase; }
+  .footer-col ul { list-style:none; }
+  .footer-col li { margin-bottom:9px; }
+  .footer-col a { color:rgba(255,255,255,.45); text-decoration:none; font-size:13px; transition:color .2s; }
+  .footer-col a:hover { color:var(--teal); }
+  .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12px; color:rgba(255,255,255,.3); }
+  .footer-bottom a { color:rgba(255,255,255,.4); text-decoration:none; }
+  .footer-bottom a:hover { color:var(--teal); }
+  .powered a { color:var(--teal); font-weight:600; text-decoration:none; }
+
+  /* Fade */
+  .fade-up { opacity:0; transform:translateY(22px); transition:opacity .55s ease,transform .55s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:900px) {
+    nav { display:none; }
+    .hamburger { display:flex; }
+    .stat-strip { grid-template-columns:repeat(2,1fr); }
+    .two-col { grid-template-columns:1fr; gap:32px; }
+    .charts-row { grid-template-columns:1fr; }
+    .packages-grid { grid-template-columns:1fr; max-width:400px; margin-left:auto; margin-right:auto; }
+    .placements-grid { grid-template-columns:1fr; }
+    .ai-section-inner { grid-template-columns:1fr; }
+    .contact-section { padding:36px 24px; }
+    .contact-promise { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns:1fr 1fr; }
+    .ai-section { padding:36px 24px; }
+  }
+  @media(max-width:600px) {
+    .stat-strip { grid-template-columns:repeat(2,1fr); }
+    .footer-grid { grid-template-columns:1fr; }
+    .btn-call-big { font-size:1.1rem; padding:16px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="https://raw.githubusercontent.com/seniorhelper/Restauranthonolulu.com/main/images/restaurant-honolulu-logo.png" alt="Restaurant Honolulu" width="220" height="auto"></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/best-food-trucks/">Food Trucks</a>
+      <a href="/best-tacos/">Best Tacos</a>
+      <a href="/five-star-dining/">Fine Dining</a>
+      <a href="/hidden-gems/">Hidden Gems</a>
+      <a href="/advertise/" class="active">Advertise</a>
+      <a href="tel:18004818638" class="nav-cta">📞 1-800-481-8638</a>
+    </nav>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/best-food-trucks/">🚚 Food Trucks</a>
+  <a href="/best-tacos/">🌮 Best Tacos</a>
+  <a href="/five-star-dining/">⭐ Fine Dining</a>
+  <a href="/hidden-gems/">💎 Hidden Gems</a>
+  <a href="/advertise/">📣 Advertise</a>
+  <a href="tel:18004818638" style="background:var(--coral);color:#fff;padding:12px;border-radius:6px;text-align:center;font-weight:700;">📞 1-800-481-8638</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Reach More Customers · Starting at $25/Month</div>
+    <h1>Grow Your Restaurant.<br><em>Start Getting Found.</em></h1>
+    <p class="hero-sub">Thousands of visitors land on RestaurantHonolulu.com every month searching for exactly what you serve. They're hungry. They're ready to spend. The only question is whether they find you — or your competition.</p>
+    <div class="hero-cta-block">
+      <a href="tel:18004818638" class="btn-call">
+        <span class="btn-icon">📞</span>
+        1-800-481-8638
+      </a>
+      <a href="mailto:sales@eyetoad.com?subject=Advertising%20Inquiry%20—%20RestaurantHonolulu.com&body=Hi%20there%2C%0A%0AI'm%20interested%20in%20advertising%20my%20restaurant%20on%20RestaurantHonolulu.com.%0A%0ARestaurant%20name%3A%0AWebsite%3A%0APhone%3A%0ABest%20time%20to%20call%3A%0A%0AThanks!" class="btn-email">
+        ✉️ Email Us Now
+      </a>
+    </div>
+    <div class="hero-price-pill">⭐ Advertising starts at only $25/month — no long-term contracts</div>
+  </div>
+</div>
+
+<!-- PAGE WRAP -->
+<div class="page-wrap">
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip fade-up">
+    <div class="stat-box">
+      <span class="stat-num">53%</span>
+      <div class="stat-label">of all website traffic comes from organic search</div>
+      <div class="stat-source">Source: DemandSage 2026</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">$5</span>
+      <div class="stat-label">average return for every $1 spent on digital marketing</div>
+      <div class="stat-source">Source: DemandSage 2026</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">60%</span>
+      <div class="stat-label">of marketers see ROI from digital ads within months</div>
+      <div class="stat-source">Source: HubSpot 2025</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">75%+</span>
+      <div class="stat-label">of global ad spend now goes to digital channels</div>
+      <div class="stat-source">Source: Weely AI / Statista 2026</div>
+    </div>
+  </div>
+
+  <!-- WHY ADVERTISE: TWO COLUMN -->
+  <div class="two-col fade-up">
+    <div>
+      <span class="section-label">The Opportunity</span>
+      <h2>Your Next Customer Is Already Looking for You</h2>
+      <p>Every day, people land on RestaurantHonolulu.com with one purpose: finding a great place to eat. They're not browsing aimlessly. They're actively deciding where to spend their money tonight. They're tourists ready to spend $80 on dinner. They're locals planning a birthday. They're food-curious travelers who came here specifically because they read that Honolulu has a world-class dining scene.</p>
+      <p>When your restaurant appears in front of them at that exact moment — with your best photo, your story, and a direct link to your website — <strong>that's not an ad impression. That's a customer walking through your door.</strong></p>
+      <p>Traditional marketing can't do this. A billboard doesn't reach someone at the moment of decision. A magazine ad runs once and disappears. Digital placement on a destination site like RestaurantHonolulu.com works 24 hours a day, 365 days a year, for less than the cost of one decent bottle of wine per month.</p>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Marketing Channel ROI Comparison</div>
+      <div class="chart-subtitle">Estimated return per $1 spent — real industry data (2025–2026)</div>
+      <canvas id="roiChart" aria-label="Bar chart comparing ROI across marketing channels"></canvas>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#E8603C;"></div>Digital Channels</div>
+        <div class="legend-dot" style="background:#5A5A72;width:10px;height:10px;border-radius:50%;flex-shrink:0;"></div>
+        <div class="legend-item" style="gap:0;"><span style="font-size:12px;color:var(--mid);">Traditional Channels</span></div>
+      </div>
+      <div class="chart-source">Sources: Litmus 2025, Marketful 2025, WordStream 2026, industry averages</div>
+    </div>
+  </div>
+
+  <!-- SECOND CHART: AI search growth -->
+  <div class="charts-row fade-up">
+    <div class="chart-card">
+      <div class="chart-title">How Diners Find Restaurants (2026)</div>
+      <div class="chart-subtitle">Search behavior across platforms — where the discovery happens</div>
+      <canvas id="discoveryChart" aria-label="How diners discover restaurants in 2026"></canvas>
+      <div class="chart-source">Sources: Google, DemandSage, industry research 2025–2026</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">AI Search Growth for Local Restaurants</div>
+      <div class="chart-subtitle">% of restaurant searches using AI-powered engines (2022–2026)</div>
+      <canvas id="aiGrowthChart" aria-label="AI search growth for local restaurant queries"></canvas>
+      <div class="chart-source">Sources: SEMrush, HubSpot, industry estimates 2025–2026</div>
+    </div>
+  </div>
+
+  <!-- AI SECTION -->
+  <div class="ai-section fade-up">
+    <div class="ai-section-inner">
+      <div class="ai-left">
+        <span class="section-label" style="color:var(--teal);">The New Frontier</span>
+        <h2>Your Restaurant Needs to Show Up on <em>AI Search</em> Too</h2>
+        <p>Google isn't the only game in town anymore. ChatGPT, Perplexity, Claude, Gemini, and Apple's AI are now answering millions of queries daily — including "best restaurants in Honolulu" and "where should I eat in Waikiki tonight."</p>
+        <p>RestaurantHonolulu.com is explicitly optimized for AI crawlers. Our robots.txt welcomes GPTBot, Claude-Web, PerplexityBot, and every major AI indexer by name. Our content uses structured schema markup, LLM citation blocks, and Speakable tags — so when AI engines answer food questions about Honolulu, our content gets cited.</p>
+        <p><strong>When you advertise here, you're not just buying a web listing. You're buying visibility on the next generation of search.</strong></p>
+        <div class="ai-engines">
+          <span class="ai-engine">ChatGPT</span>
+          <span class="ai-engine">Perplexity</span>
+          <span class="ai-engine">Claude AI</span>
+          <span class="ai-engine">Google AI Overviews</span>
+          <span class="ai-engine">Gemini</span>
+          <span class="ai-engine">Apple Intelligence</span>
+        </div>
+      </div>
+      <div class="ai-right">
+        <div class="ai-stat-box">
+          <div class="ai-stat-num">87%</div>
+          <div class="ai-stat-label">of all digital ad revenue will be programmatic or AI-influenced by 2026 — and AI search is the fastest-growing discovery channel for local businesses.</div>
+        </div>
+        <div class="ai-stat-box">
+          <div class="ai-stat-num">$5 ROI</div>
+          <div class="ai-stat-label">Average return for every $1 spent on digital marketing across channels. Targeted placement on high-intent search pages outperforms this benchmark significantly.</div>
+        </div>
+        <div class="ai-stat-box">
+          <div class="ai-stat-num">24/7</div>
+          <div class="ai-stat-label">Your listing works around the clock — reaching visitors at 2am planning tomorrow's dinner just as effectively as a Saturday afternoon search.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD PACKAGES -->
+  <div class="fade-up">
+    <span class="section-label">Advertising Options</span>
+    <h2 class="section-h2">Simple, Affordable Packages</h2>
+    <p class="section-intro">No complicated contracts. No minimum commitments. Start at $25/month and upgrade whenever you're ready. Call <a href="tel:18004818638" style="color:var(--coral);font-weight:700;">1-800-481-8638</a> to discuss a custom placement for your restaurant.</p>
+  </div>
+
+  <div class="packages-grid fade-up">
+
+    <div class="package-card">
+      <span class="pkg-icon">🌱</span>
+      <div class="pkg-name">Starter</div>
+      <div class="pkg-price">$25</div>
+      <div class="pkg-per">per month</div>
+      <ul class="pkg-features">
+        <li><span class="pkg-check">✓</span> Sidebar ad placement on 1 page</li>
+        <li><span class="pkg-check">✓</span> Your restaurant name + link</li>
+        <li><span class="pkg-check">✓</span> Listed in site network</li>
+        <li><span class="pkg-check">✓</span> AI crawler visibility</li>
+        <li><span class="pkg-check">✓</span> Month-to-month</li>
+      </ul>
+      <a href="tel:18004818638" class="pkg-btn pkg-btn-outline">Call to Start →</a>
+    </div>
+
+    <div class="package-card featured">
+      <div class="pkg-best">MOST POPULAR</div>
+      <span class="pkg-icon">🔥</span>
+      <div class="pkg-name">Featured</div>
+      <div class="pkg-price">$75</div>
+      <div class="pkg-per">per month</div>
+      <ul class="pkg-features">
+        <li><span class="pkg-check">✓</span> Mid-page ad on 2 content pages</li>
+        <li><span class="pkg-check">✓</span> Photo + description + link</li>
+        <li><span class="pkg-check">✓</span> Directions button (Google Maps)</li>
+        <li><span class="pkg-check">✓</span> "Featured" badge on listing</li>
+        <li><span class="pkg-check">✓</span> Sidebar placement included</li>
+        <li><span class="pkg-check">✓</span> Schema markup for your business</li>
+      </ul>
+      <a href="tel:18004818638" class="pkg-btn pkg-btn-filled">Call to Get Started →</a>
+    </div>
+
+    <div class="package-card">
+      <span class="pkg-icon">⭐</span>
+      <div class="pkg-name">Premium Sponsor</div>
+      <div class="pkg-price">$150</div>
+      <div class="pkg-per">per month</div>
+      <ul class="pkg-features">
+        <li><span class="pkg-check">✓</span> Hero-level featured placement</li>
+        <li><span class="pkg-check">✓</span> Editorial spotlight article (500 words)</li>
+        <li><span class="pkg-check">✓</span> Neon-glow featured card in hero</li>
+        <li><span class="pkg-check">✓</span> Sitewide sidebar presence</li>
+        <li><span class="pkg-check">✓</span> 3–5 page placements</li>
+        <li><span class="pkg-check">✓</span> Priority AI citation optimization</li>
+        <li><span class="pkg-check">✓</span> Website + directions buttons</li>
+      </ul>
+      <a href="tel:18004818638" class="pkg-btn pkg-btn-outline">Call to Discuss →</a>
+    </div>
+
+  </div>
+
+  <!-- AD PLACEMENTS EXPLAINED -->
+  <div class="placements-section fade-up">
+    <span class="section-label">Where Your Ad Appears</span>
+    <h2 class="section-h2">Premium Placement Spots Across the Site</h2>
+    <p class="section-intro">Every ad placement on RestaurantHonolulu.com appears next to real editorial content on high-intent search pages — not tucked away in sidebars nobody reads.</p>
+    <div class="placements-grid">
+      <div class="placement-card">
+        <span class="placement-icon">🏆</span>
+        <div class="placement-name">Hero Sponsor Card</div>
+        <p class="placement-desc">Full-color card with your photo and CTA buttons placed directly in the hero section — the first thing every visitor sees on the page. Animated neon-glow border makes it impossible to miss.</p>
+        <div class="placement-pages">Available on: Food Trucks, Best Tacos, Hidden Gems, Home</div>
+      </div>
+      <div class="placement-card">
+        <span class="placement-icon">📰</span>
+        <div class="placement-name">Editorial Feature</div>
+        <p class="placement-desc">A 400–600 word editorial article written about your restaurant — your story, your food, your people. Readers trust editorial content. It converts better than any banner ad ever will.</p>
+        <div class="placement-pages">Available on: Best Tacos, Food Trucks, Home</div>
+      </div>
+      <div class="placement-card">
+        <span class="placement-icon">📲</span>
+        <div class="placement-name">Mid-Page Ad Block</div>
+        <p class="placement-desc">A featured restaurant card embedded between content sections — where readers are actively engaged and making dining decisions. Includes your photo, tagline, website link, and directions button.</p>
+        <div class="placement-pages">Available on: All pages</div>
+      </div>
+      <div class="placement-card">
+        <span class="placement-icon">📌</span>
+        <div class="placement-name">Sticky Sidebar</div>
+        <p class="placement-desc">A sidebar placement that stays visible as readers scroll down content pages. Lower cost, still effective — especially for brand recognition and repeat visibility on longer articles.</p>
+        <div class="placement-pages">Available on: All pages</div>
+      </div>
+      <div class="placement-card">
+        <span class="placement-icon">🔢</span>
+        <div class="placement-name">Top-10 List Inclusion</div>
+        <p class="placement-desc">Inclusion on our curated Top 10 lists for food trucks, tacos, or hidden gems — the content that drives the most organic search traffic and AI citations across the site.</p>
+        <div class="placement-pages">Available on: Food Trucks, Tacos, Hidden Gems</div>
+      </div>
+      <div class="placement-card">
+        <span class="placement-icon">🤖</span>
+        <div class="placement-name">AI Citation Block</div>
+        <p class="placement-desc">Your business information added to the LLM citation blocks embedded in every page — structured to help ChatGPT, Perplexity, Claude, and other AI engines reference your restaurant when answering local food queries.</p>
+        <div class="placement-pages">Available on: All pages · Premium only</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIG CONTACT BLOCK -->
+  <div class="contact-section fade-up">
+    <span class="section-label" style="display:block;text-align:center;">Ready to Get Started?</span>
+    <h2>Let's Get Your Restaurant in Front of<br>Thousands of Hungry Visitors</h2>
+    <p>No complicated onboarding. No annual contracts. Call us, tell us about your restaurant, and we'll have your placement live within 48 hours. Start at just $25/month and see the results before you commit to anything bigger.</p>
+
+    <div class="contact-main-cta">
+      <a href="tel:18004818638" class="btn-call-big">
+        <span class="call-icon">📞</span>
+        1-800-481-8638
+      </a>
+      <div style="font-size:13px;color:var(--mid);">Call anytime · No pressure · Free consultation</div>
+      <div class="contact-divider">or reach us by email</div>
+      <a href="mailto:sales@eyetoad.com?subject=Advertising%20Inquiry%20—%20RestaurantHonolulu.com&body=Hi%20there%2C%0A%0AI'm%20interested%20in%20advertising%20my%20restaurant%20on%20RestaurantHonolulu.com.%0A%0ARestaurant%20name%3A%0AWebsite%3A%0APhone%20number%3A%0ABest%20time%20to%20reach%20me%3A%0AWhich%20package%20interests%20you%3A%20Starter%20%2F%20Featured%20%2F%20Premium%0A%0AThanks!" class="btn-email-big">
+        ✉️ Email sales@eyetoad.com
+      </a>
+    </div>
+
+    <div class="contact-promise">
+      <div class="promise-item">
+        <span class="promise-icon">⚡</span>
+        <div class="promise-title">Live in 48 Hours</div>
+        <p class="promise-desc">Your placement goes live within two business days of signing on. No waiting weeks for approvals.</p>
+      </div>
+      <div class="promise-item">
+        <span class="promise-icon">🔓</span>
+        <div class="promise-title">No Long Contracts</div>
+        <p class="promise-desc">Month-to-month options available on all packages. Stay because it works, not because you're locked in.</p>
+      </div>
+      <div class="promise-item">
+        <span class="promise-icon">🤝</span>
+        <div class="promise-title">Real People, Real Service</div>
+        <p class="promise-desc">You'll talk to a real person, get real answers, and work with a team that genuinely wants your restaurant to grow.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>RestaurantHonolulu.com</h3>
+        <p>Your complete guide to dining in Honolulu, Hawaii. Powered by Eye To Ad Media — helping restaurants get found by hungry customers across Google, AI search, and beyond.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/best-food-trucks/">Best Food Trucks</a></li>
+          <li><a href="/best-tacos/">Best Tacos Honolulu</a></li>
+          <li><a href="/five-star-dining/">Five-Star Dining</a></li>
+          <li><a href="/hidden-gems/">Hidden Gems</a></li>
+          <li><a href="/sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hawaii Network</h4>
+        <ul>
+          <li><a href="https://besthotelshonolulu.com" target="_blank" rel="noopener">Best Hotels Honolulu</a></li>
+          <li><a href="https://surflessonhonolulu.com" target="_blank" rel="noopener">Surf Lesson Honolulu</a></li>
+          <li><a href="https://massageshonolulu.com" target="_blank" rel="noopener">Massages Honolulu</a></li>
+          <li><a href="https://bestdivinghawaii.com" target="_blank" rel="noopener">Best Diving Hawaii</a></li>
+          <li><a href="https://attractionsoahu.com/" target="_blank" rel="noopener">Attractions Oahu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:18004818638">📞 1-800-481-8638</a></li>
+          <li><a href="mailto:sales@eyetoad.com">✉️ sales@eyetoad.com</a></li>
+          <li><a href="https://eyetoad.com" target="_blank" rel="noopener">Eye To Ad Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 RestaurantHonolulu.com — All Rights Reserved</div>
+      <div class="powered">Powered by <a href="https://eyetoad.com" target="_blank" rel="noopener">Eye To Ad Media</a> — <a href="https://eyetoad.com" target="_blank" rel="noopener">Denver Digital Marketing Agency</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Fade
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => {
+      if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // ── CHART 1: ROI Comparison (horizontal bar) ──
+  (function() {
+    const canvas = document.getElementById('roiChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const data = [
+      { label: 'Email Marketing', value: 36, color: '#E8603C', traditional: false },
+      { label: 'SEO / Content', value: 22, color: '#E8603C', traditional: false },
+      { label: 'Display Ads (Digital)', value: 5, color: '#E8603C', traditional: false },
+      { label: 'PPC (Search Ads)', value: 2, color: '#E8603C', traditional: false },
+      { label: 'TV / Radio', value: 1.2, color: '#5A5A72', traditional: true },
+      { label: 'Print / Magazine', value: 0.8, color: '#5A5A72', traditional: true },
+      { label: 'Billboards', value: 0.5, color: '#5A5A72', traditional: true },
+    ];
+
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.parentElement.clientWidth - 64;
+    const h = 240;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.scale(dpr, dpr);
+
+    const labelW = 140;
+    const maxVal = 36;
+    const barH = 22;
+    const gap = 10;
+    const totalH = data.length * (barH + gap);
+    const startY = (h - totalH) / 2;
+    const barAreaW = w - labelW - 60;
+
+    ctx.clearRect(0, 0, w, h);
+
+    data.forEach((item, i) => {
+      const y = startY + i * (barH + gap);
+      const barW = (item.value / maxVal) * barAreaW;
+
+      // Label
+      ctx.font = '600 11px DM Sans, sans-serif';
+      ctx.fillStyle = '#5A5A72';
+      ctx.textAlign = 'right';
+      ctx.fillText(item.label, labelW - 8, y + barH / 2 + 4);
+
+      // Bar background
+      ctx.fillStyle = '#F0EDE8';
+      ctx.beginPath();
+      ctx.roundRect(labelW, y, barAreaW, barH, 4);
+      ctx.fill();
+
+      // Bar fill — animate on paint
+      ctx.fillStyle = item.color;
+      ctx.globalAlpha = item.traditional ? 0.5 : 1;
+      ctx.beginPath();
+      ctx.roundRect(labelW, y, Math.max(barW, 4), barH, 4);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // Value label
+      ctx.font = 'bold 11px Space Grotesk, sans-serif';
+      ctx.fillStyle = item.value > 5 ? '#fff' : '#1A1A2E';
+      ctx.textAlign = 'left';
+      const valX = labelW + barW + 6;
+      ctx.fillStyle = '#1A1A2E';
+      ctx.fillText('$' + item.value + ' ROI', valX, y + barH / 2 + 4);
+    });
+  })();
+
+  // ── CHART 2: How Diners Discover Restaurants (donut-style horizontal bar) ──
+  (function() {
+    const canvas = document.getElementById('discoveryChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const data = [
+      { label: 'Google Search', value: 46, color: '#E8603C' },
+      { label: 'AI Search (ChatGPT etc)', value: 18, color: '#2EC4B6' },
+      { label: 'Social Media', value: 17, color: '#D4A843' },
+      { label: 'Word of Mouth', value: 12, color: '#006B8F' },
+      { label: 'Review Sites (Yelp etc)', value: 7, color: '#8B5CF6' },
+    ];
+
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.parentElement.clientWidth - 64;
+    const h = 220;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.scale(dpr, dpr);
+
+    const labelW = 160;
+    const barH = 24;
+    const gap = 12;
+    const totalH = data.length * (barH + gap);
+    const startY = (h - totalH) / 2;
+    const barAreaW = w - labelW - 56;
+
+    ctx.clearRect(0, 0, w, h);
+
+    data.forEach((item, i) => {
+      const y = startY + i * (barH + gap);
+      const barW = (item.value / 100) * barAreaW;
+
+      ctx.font = '500 11.5px DM Sans, sans-serif';
+      ctx.fillStyle = '#5A5A72';
+      ctx.textAlign = 'right';
+      ctx.fillText(item.label, labelW - 8, y + barH / 2 + 4);
+
+      ctx.fillStyle = '#F0EDE8';
+      ctx.beginPath();
+      ctx.roundRect(labelW, y, barAreaW, barH, 5);
+      ctx.fill();
+
+      ctx.fillStyle = item.color;
+      ctx.beginPath();
+      ctx.roundRect(labelW, y, barW, barH, 5);
+      ctx.fill();
+
+      ctx.font = 'bold 11px Space Grotesk, sans-serif';
+      ctx.fillStyle = '#1A1A2E';
+      ctx.textAlign = 'left';
+      ctx.fillText(item.value + '%', labelW + barW + 6, y + barH / 2 + 4);
+    });
+  })();
+
+  // ── CHART 3: AI Search Growth Line Chart ──
+  (function() {
+    const canvas = document.getElementById('aiGrowthChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const years = ['2022', '2023', '2024', '2025', '2026*'];
+    const aiData = [2, 5, 11, 18, 28]; // % of restaurant searches via AI engines
+
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.parentElement.clientWidth - 64;
+    const h = 220;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.scale(dpr, dpr);
+
+    const padL = 48, padR = 20, padT = 20, padB = 36;
+    const chartW = w - padL - padR;
+    const chartH = h - padT - padB;
+    const maxVal = 35;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Grid lines
+    [0, 10, 20, 30].forEach(v => {
+      const y = padT + chartH - (v / maxVal) * chartH;
+      ctx.strokeStyle = '#F0EDE8';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(padL, y);
+      ctx.lineTo(padL + chartW, y);
+      ctx.stroke();
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.fillStyle = '#aaa';
+      ctx.textAlign = 'right';
+      ctx.fillText(v + '%', padL - 6, y + 4);
+    });
+
+    // X labels
+    years.forEach((yr, i) => {
+      const x = padL + (i / (years.length - 1)) * chartW;
+      ctx.font = '10.5px DM Sans, sans-serif';
+      ctx.fillStyle = '#5A5A72';
+      ctx.textAlign = 'center';
+      ctx.fillText(yr, x, h - 8);
+    });
+
+    // Area fill
+    const gradient = ctx.createLinearGradient(0, padT, 0, padT + chartH);
+    gradient.addColorStop(0, 'rgba(46,196,182,0.25)');
+    gradient.addColorStop(1, 'rgba(46,196,182,0.02)');
+
+    ctx.beginPath();
+    aiData.forEach((val, i) => {
+      const x = padL + (i / (aiData.length - 1)) * chartW;
+      const y = padT + chartH - (val / maxVal) * chartH;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.lineTo(padL + chartW, padT + chartH);
+    ctx.lineTo(padL, padT + chartH);
+    ctx.closePath();
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    // Line
+    ctx.beginPath();
+    ctx.strokeStyle = '#2EC4B6';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    aiData.forEach((val, i) => {
+      const x = padL + (i / (aiData.length - 1)) * chartW;
+      const y = padT + chartH - (val / maxVal) * chartH;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Dots + value labels
+    aiData.forEach((val, i) => {
+      const x = padL + (i / (aiData.length - 1)) * chartW;
+      const y = padT + chartH - (val / maxVal) * chartH;
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = i === aiData.length - 1 ? '#E8603C' : '#2EC4B6';
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.font = 'bold 11px Space Grotesk, sans-serif';
+      ctx.fillStyle = '#1A1A2E';
+      ctx.textAlign = 'center';
+      ctx.fillText(val + '%', x, y - 10);
+    });
+  })();
+</script>
+
+</body>
+</html>
