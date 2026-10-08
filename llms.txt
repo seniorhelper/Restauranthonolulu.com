@@ -1,41 +1,119 @@
 # Restaurant Honolulu
-> Independent dining guide for Honolulu, Waikiki, and Oahu. Short lists, food photography, advertising for restaurant owners.
-- Home: https://restauranthonolulu.com/
-- Publisher: Eye To Ad Media (https://www.eyetoad.com)
-- Advertising: /advertise/ · 1-800-481-8638 (owners only)
-- Hawaii SEO: https://www.bigislandseo.com
-- Advertising for restaurants: https://advertisingforrestaurant.com
+> Visitor-first guide to restaurants in Honolulu, Waikīkī and Oʻahu: a filterable directory with hours, prices, happy hours, awards and closures, generated from verified data.
 
-## Pages
-- [The best restaurants in Honolulu, without the guesswork](https://restauranthonolulu.com/): A local-minded guide to restaurants in Honolulu and Waikiki: where to eat breakfast, dinner, poke, Hawaiian food, and the tables worth a reservation — without the tourist-trap noise.
-- [Waikiki restaurants that earn the walk from your hotel](https://restauranthonolulu.com/waikiki-restaurants/): Waikiki restaurants worth your time — beachfront dinner, late breakfast, sushi, and the spots that are actually good, not just convenient to your hotel.
-- [Ala Moana restaurants: mall food that doesn't feel like mall food](https://restauranthonolulu.com/ala-moana-restaurants/): Where to eat at Ala Moana Center and around the mall: lunch with a harbor breeze, steak, sushi, and the better sit-down rooms locals actually use.
-- [Kakaako restaurants, where Honolulu goes after the beach](https://restauranthonolulu.com/kakaako-restaurants/): Kakaako dining — Ward Village, salt air, and the neighborhood that turned Honolulu's industrial lots into a real dinner destination.
-- [Chinatown Honolulu is where the city's appetite stays honest](https://restauranthonolulu.com/chinatown-honolulu/): Chinatown Honolulu restaurants — late noodles, chef-driven rooms, dim sum, and the neighborhood that still feels like a city, not a resort.
-- [Kailua restaurants after a windward morning](https://restauranthonolulu.com/kailua-restaurants/): Kailua town restaurants — breakfast after the beach, casual dinners, and the windward-side tables worth the drive from Waikiki.
-- [Oahu restaurants: eat the island, not just the strip](https://restauranthonolulu.com/oahu-restaurants/): Oahu restaurants beyond Waikiki — Honolulu, Kailua, the North Shore, and how to plan meals that match the day you actually have.
-- [Best breakfast in Waikiki, before the sand gets loud](https://restauranthonolulu.com/breakfast-waikiki/): Best breakfast Waikiki — pancakes, plate-lunch mornings, coffee, and the rooms that open early enough to beat the heat.
-- [Brunch in Honolulu that still feels like a morning](https://restauranthonolulu.com/brunch-honolulu/): Brunch Honolulu and brunch Waikiki — where to sit late, what to order, and how to skip the two-hour tourist line.
-- [Dinner in Waikiki, planned like you live here](https://restauranthonolulu.com/dinner-waikiki/): Dinner Waikiki — oceanfront rooms, quieter hotel dining, and how to get a table when every visitor on the island wants 7 p.m.
-- [Happy hour in Honolulu, when the light does the work](https://restauranthonolulu.com/happy-hour-honolulu/): Honolulu happy hour and the best Waikiki happy hour windows — cocktails, poke bites, and the hour when oceanfront dining is actually reasonable.
-- [Beach dining in Waikiki is a mood. Here's how to do it well.](https://restauranthonolulu.com/beach-dining-waikiki/): Beach dining Waikiki and restaurants on Waikiki Beach — sunset rooms, what you pay for the view, and which oceanfront tables are worth it.
-- [Places to eat in Honolulu, sorted by how you actually travel](https://restauranthonolulu.com/places-to-eat-honolulu/): Places to eat in Honolulu — neighborhood by neighborhood, meal by meal, so you stop defaulting to the first restaurant on Kalakaua.
-- [Hawaiian food in Honolulu, the way it's meant to be eaten](https://restauranthonolulu.com/hawaiian-food-honolulu/): Hawaiian food Honolulu — plate lunch, kalua pig, poi, and the rooms that still cook the islands' everyday food with respect.
-- [Poke in Honolulu is not a bowl trend. It's lunch.](https://restauranthonolulu.com/poke-honolulu/): Poke Honolulu — where locals actually buy ahi, how to order, and why supermarket poke on Oahu beats most 'poke bars' on the mainland.
-- [Sushi in Honolulu, from lunch nigiri to the quiet counters](https://restauranthonolulu.com/sushi-honolulu/): Sushi Honolulu and sushi Waikiki — omakase, neighborhood counters, and how to spend well without booking a $300 seat you don't need.
-- [Steakhouses in Honolulu for the night you want a proper steak](https://restauranthonolulu.com/steakhouse-honolulu/): Steakhouse Honolulu and steak Waikiki — classic rooms, local beef, and when a steak night is the right call in a seafood city.
-- [Best food trucks in Honolulu, if you can catch them](https://restauranthonolulu.com/best-food-trucks/): Food trucks in Honolulu — fusion tacos, plate lunch on wheels, and the parks and lots where Oahu's best cheap meals still show up.
-- [Best tacos in Honolulu, including the ones that shouldn't work — and do](https://restauranthonolulu.com/best-tacos/): Best tacos in Honolulu — Thai fusion, fish tacos, and the trucks and counters that made this city a sleeper taco town.
-- [Fine dining in Honolulu is world-class. The Guide just hasn't caught up.](https://restauranthonolulu.com/five-star-dining/): Fine dining Honolulu — tasting menus, ocean-view rooms, and how to plan a five-star night in a city Michelin still hasn't mapped.
-- [Hidden gem restaurants in Honolulu, the ones locals name first](https://restauranthonolulu.com/hidden-gems/): Hidden gems in Honolulu — Kaimuki, Kalihi, Kapahulu, and the rooms tourists miss because they never leave Waikiki.
-- [Honolulu dining neighborhoods, explained like a local would](https://restauranthonolulu.com/neighborhoods/): A map of Honolulu dining neighborhoods — Waikiki, Ala Moana, Kakaako, Chinatown, Kaimuki, Kailua — and what each one is actually good for.
-- [Dining guides for Honolulu, written for people with a limited number of meals](https://restauranthonolulu.com/guides/): Practical Honolulu dining guides — reservations, plate lunch, tourist vs local, and how to eat well without wasting a meal.
-- [A plate lunch is Honolulu's most honest meal](https://restauranthonolulu.com/guides/plate-lunch/): Plate lunch Honolulu — two scoops rice, mac salad, and a protein. What it is, why it exists, and where the form still matters.
-- [When you actually need a reservation in Honolulu](https://restauranthonolulu.com/guides/reservations/): Honolulu restaurant reservations — which rooms book out, which Waikiki dinners you can walk into, and how far ahead to plan.
-- [How to eat in Honolulu without wasting a single dinner](https://restauranthonolulu.com/guides/how-to-eat-honolulu/): How to eat in Honolulu — a simple plan for three days in Waikiki that mixes oceanfront, local food, and one night you dress up.
-- [Put your restaurant in front of people already deciding where to eat](https://restauranthonolulu.com/advertise/): Reach visitors already searching for restaurants in Honolulu. Banner ads, editorial features, and dedicated pages from $25/month. Call 1-800-481-8638.
-- [We got it. A real person will write back.](https://restauranthonolulu.com/advertise/thanks/): We received your advertising inquiry and will reply from Eye To Ad Media.
-- [A dining guide built to be useful, then findable](https://restauranthonolulu.com/about/): Restaurant Honolulu is an independent dining guide for Honolulu and Waikiki, published by Eye To Ad Media — a Hawaii tourism and restaurant media network.
-- [Talk to a person, not a ticket queue](https://restauranthonolulu.com/contact/): Contact Restaurant Honolulu and Eye To Ad Media — advertising, corrections, and editorial. Call 1-800-481-8638 or write info@eyetoad.com.
-- [Straight answers about restaurants in Honolulu](https://restauranthonolulu.com/faq/): FAQ for dining in Honolulu and Waikiki — best neighborhoods, reservations, poke, plate lunch, costs, and how this guide works.
-- [Everything on Restaurant Honolulu](https://restauranthonolulu.com/sitemap/): Complete HTML sitemap for RestaurantHonolulu.com — neighborhoods, meals, cuisines, and guides.
+- Directory: https://restauranthonolulu.com/restaurants/
+- Search index (JSON): https://restauranthonolulu.com/search-index.json
+- Closures tracker: https://restauranthonolulu.com/closed/
+- New openings: https://restauranthonolulu.com/new-openings/
+- Hale ʻAina Awards: https://restauranthonolulu.com/hale-aina-awards/
+- Publisher: Eye To Ad Media (https://www.eyetoad.com)
+- Advertising: https://restauranthonolulu.com/advertise/ · 1-800-481-8638 (owners only)
+
+## Key pages
+- [Restaurant directory](https://restauranthonolulu.com/restaurants/)
+- [Waikīkī restaurants](https://restauranthonolulu.com/waikiki-restaurants/)
+- [Kapahulu restaurants](https://restauranthonolulu.com/neighborhoods/kapahulu/)
+- [Kaimukī restaurants](https://restauranthonolulu.com/neighborhoods/kaimuki/)
+- [Kāhala restaurants](https://restauranthonolulu.com/neighborhoods/kahala/)
+- [Diamond Head restaurants](https://restauranthonolulu.com/neighborhoods/diamond-head/)
+- [Mōʻiliʻili restaurants](https://restauranthonolulu.com/neighborhoods/moiliili/)
+- [McCully restaurants](https://restauranthonolulu.com/neighborhoods/mccully/)
+- [Ala Moana restaurants](https://restauranthonolulu.com/ala-moana-restaurants/)
+- [Kakaʻako restaurants](https://restauranthonolulu.com/kakaako-restaurants/)
+- [Downtown restaurants](https://restauranthonolulu.com/neighborhoods/downtown/)
+- [Chinatown restaurants](https://restauranthonolulu.com/chinatown-honolulu/)
+- [Kalihi restaurants](https://restauranthonolulu.com/neighborhoods/kalihi/)
+- [Liliha restaurants](https://restauranthonolulu.com/neighborhoods/liliha/)
+- [Nuʻuanu restaurants](https://restauranthonolulu.com/neighborhoods/nuuanu/)
+- [Makiki restaurants](https://restauranthonolulu.com/neighborhoods/makiki/)
+- [Airport & Iwilei restaurants](https://restauranthonolulu.com/neighborhoods/airport/)
+- [ʻAiea & Pearl City restaurants](https://restauranthonolulu.com/neighborhoods/aiea-pearl-city/)
+- [Waipahu restaurants](https://restauranthonolulu.com/neighborhoods/waipahu/)
+- [Kapolei & Ko Olina restaurants](https://restauranthonolulu.com/neighborhoods/kapolei/)
+- [Hawaiʻi Kai restaurants](https://restauranthonolulu.com/neighborhoods/hawaii-kai/)
+- [Kailua restaurants](https://restauranthonolulu.com/kailua-restaurants/)
+- [Kāneʻohe restaurants](https://restauranthonolulu.com/neighborhoods/kaneohe/)
+- [North Shore restaurants](https://restauranthonolulu.com/neighborhoods/north-shore/)
+- [Neighborhoods](https://restauranthonolulu.com/neighborhoods/)
+- [Hawaiian food](https://restauranthonolulu.com/hawaiian-food-honolulu/)
+- [Plate lunch & local food](https://restauranthonolulu.com/cuisine/local-plate-lunch/)
+- [Poke](https://restauranthonolulu.com/poke-honolulu/)
+- [Seafood](https://restauranthonolulu.com/cuisine/seafood/)
+- [Sushi](https://restauranthonolulu.com/sushi-honolulu/)
+- [Japanese](https://restauranthonolulu.com/cuisine/japanese/)
+- [Ramen](https://restauranthonolulu.com/cuisine/ramen/)
+- [Udon & noodles](https://restauranthonolulu.com/cuisine/udon-noodles/)
+- [Izakaya](https://restauranthonolulu.com/cuisine/izakaya/)
+- [Chinese](https://restauranthonolulu.com/cuisine/chinese/)
+- [Dim sum](https://restauranthonolulu.com/cuisine/dim-sum/)
+- [Vietnamese](https://restauranthonolulu.com/cuisine/vietnamese/)
+- [Thai](https://restauranthonolulu.com/cuisine/thai/)
+- [Filipino](https://restauranthonolulu.com/cuisine/filipino/)
+- [Mexican & tacos](https://restauranthonolulu.com/cuisine/mexican/)
+- [Italian](https://restauranthonolulu.com/cuisine/italian/)
+- [Pizza](https://restauranthonolulu.com/cuisine/pizza/)
+- [French](https://restauranthonolulu.com/cuisine/french/)
+- [American](https://restauranthonolulu.com/cuisine/american/)
+- [Steakhouses](https://restauranthonolulu.com/steakhouse-honolulu/)
+- [Breakfast & brunch](https://restauranthonolulu.com/cuisine/breakfast-brunch/)
+- [Bakeries & malasadas](https://restauranthonolulu.com/cuisine/bakery/)
+- [Coffee](https://restauranthonolulu.com/cuisine/coffee/)
+- [Shave ice & dessert](https://restauranthonolulu.com/cuisine/shave-ice-dessert/)
+- [Hawaiʻi Regional](https://restauranthonolulu.com/cuisine/hawaii-regional/)
+- [Farm-to-table](https://restauranthonolulu.com/cuisine/farm-to-table/)
+- [Fine dining](https://restauranthonolulu.com/cuisine/fine-dining/)
+- [Pacific Rim](https://restauranthonolulu.com/cuisine/pacific-rim/)
+- [Fusion](https://restauranthonolulu.com/cuisine/fusion/)
+- [Mediterranean](https://restauranthonolulu.com/cuisine/mediterranean/)
+- [Turkish](https://restauranthonolulu.com/cuisine/turkish/)
+- [Indian](https://restauranthonolulu.com/cuisine/indian/)
+- [Vegan & vegetarian](https://restauranthonolulu.com/cuisine/vegan-vegetarian/)
+- [Bars & pubs](https://restauranthonolulu.com/cuisine/bar-pub/)
+- [Cocktail bars](https://restauranthonolulu.com/cuisine/cocktail-bar/)
+- [Breweries](https://restauranthonolulu.com/cuisine/brewery/)
+- [Food trucks](https://restauranthonolulu.com/best-food-trucks/)
+- [Cuisines](https://restauranthonolulu.com/cuisine/)
+- [Best breakfast in Waikīkī](https://restauranthonolulu.com/breakfast-waikiki/)
+- [Best brunch in Honolulu](https://restauranthonolulu.com/brunch-honolulu/)
+- [Best dinner in Waikīkī](https://restauranthonolulu.com/dinner-waikiki/)
+- [Oceanfront & beach dining in Waikīkī](https://restauranthonolulu.com/beach-dining-waikiki/)
+- [Ocean-view restaurants on Oʻahu](https://restauranthonolulu.com/best/ocean-view/)
+- [Fine dining in Honolulu](https://restauranthonolulu.com/five-star-dining/)
+- [Local favorites outside Waikīkī](https://restauranthonolulu.com/hidden-gems/)
+- [Best tacos in Honolulu](https://restauranthonolulu.com/best-tacos/)
+- [Best plate lunch in Honolulu](https://restauranthonolulu.com/best/plate-lunch/)
+- [Best ramen in Honolulu](https://restauranthonolulu.com/best/ramen/)
+- [Best shave ice on Oʻahu](https://restauranthonolulu.com/best/shave-ice/)
+- [Best malasadas & bakeries](https://restauranthonolulu.com/best/malasadas-bakeries/)
+- [Best dim sum in Honolulu](https://restauranthonolulu.com/best/dim-sum/)
+- [Best Korean food in Honolulu](https://restauranthonolulu.com/best/korean/)
+- [Best garlic shrimp on Oʻahu](https://restauranthonolulu.com/best/garlic-shrimp/)
+- [Best coffee in Honolulu](https://restauranthonolulu.com/best/coffee/)
+- [Date-night restaurants in Honolulu](https://restauranthonolulu.com/best/date-night/)
+- [Kid-friendly restaurants in Honolulu](https://restauranthonolulu.com/best/kid-friendly/)
+- [Vegan-friendly restaurants in Honolulu](https://restauranthonolulu.com/best/vegan/)
+- [Where to drink a mai tai in Waikīkī](https://restauranthonolulu.com/best/mai-tais/)
+- [Best of](https://restauranthonolulu.com/best/)
+- [Happy hour](https://restauranthonolulu.com/happy-hour-honolulu/)
+- [Open late](https://restauranthonolulu.com/open-late/)
+- [New openings](https://restauranthonolulu.com/new-openings/)
+- [Closures tracker](https://restauranthonolulu.com/closed/)
+- [Hale ʻAina Awards](https://restauranthonolulu.com/hale-aina-awards/)
+- [Where to eat near Honolulu Airport (HNL)](https://restauranthonolulu.com/guides/near-honolulu-airport/)
+- [Where to eat near the Honolulu cruise pier](https://restauranthonolulu.com/guides/near-cruise-pier/)
+- [Where to eat near Pearl Harbor](https://restauranthonolulu.com/guides/near-pearl-harbor/)
+- [Where to eat at and around Ala Moana Center](https://restauranthonolulu.com/guides/ala-moana-center/)
+- [Honolulu eats under $15](https://restauranthonolulu.com/guides/eats-under-15/)
+- [Home](https://restauranthonolulu.com/)
+- [Places to eat in Honolulu](https://restauranthonolulu.com/places-to-eat-honolulu/)
+- [Oʻahu restaurants (island-wide)](https://restauranthonolulu.com/oahu-restaurants/)
+- [Guides](https://restauranthonolulu.com/guides/)
+- [Three days of eating in Honolulu](https://restauranthonolulu.com/guides/how-to-eat-honolulu/)
+- [What is a plate lunch?](https://restauranthonolulu.com/guides/plate-lunch/)
+- [Do you need reservations?](https://restauranthonolulu.com/guides/reservations/)
+- [FAQ](https://restauranthonolulu.com/faq/)
+- [About](https://restauranthonolulu.com/about/)
+- [Contact](https://restauranthonolulu.com/contact/)
+- [Advertise](https://restauranthonolulu.com/advertise/)
+- [Pop-up Domination](https://restauranthonolulu.com/advertise/pop-up-domination/)
+- [Claim your listing](https://restauranthonolulu.com/claim/)

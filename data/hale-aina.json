@@ -1,0 +1,251 @@
+{
+  "editions": [
+    {
+      "year": 2026,
+      "source": "https://www.honolulumagazine.com/hale-aina-award-winners-the-best-restaurants-in-hawaii/",
+      "notes": "Announced June 9, 2026. Reader-voted, except Restaurateur of the Year. Selected categories shown.",
+      "categories": [
+        {
+          "category": "Best New Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Chao Hawaiʻi",
+              "slug": "chao-hawaii"
+            },
+            {
+              "rank": "Silver",
+              "name": "Botanico Waikīkī"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Earls Waikīkī",
+              "slug": "earls-kitchen-bar-waikiki"
+            },
+            {
+              "rank": "Finalist",
+              "name": "ROKC Hawaiʻi"
+            }
+          ]
+        },
+        {
+          "category": "Best Oʻahu Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Giovedì"
+            },
+            {
+              "rank": "Silver",
+              "name": "Arancino at The Kāhala"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Kapa Hale"
+            },
+            {
+              "rank": "Finalist",
+              "name": "Yohei Sushi"
+            }
+          ]
+        },
+        {
+          "category": "Best Maui Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Mala Ocean Tavern"
+            },
+            {
+              "rank": "Silver",
+              "name": "Mama's Fish House"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Merriman's Kapalua"
+            },
+            {
+              "rank": "Finalist",
+              "name": "Monkeypod Kitchen Kāʻanapali"
+            }
+          ]
+        },
+        {
+          "category": "Best Hawaiʻi Island Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Merriman's Waimea"
+            },
+            {
+              "rank": "Silver",
+              "name": "Moon and Turtle"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Engawa by Islander Sake Brewery"
+            },
+            {
+              "rank": "Finalist",
+              "name": "Kaleo's Bar & Grill"
+            }
+          ]
+        },
+        {
+          "category": "Best Kauaʻi Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "ʻĀina Kauaʻi Restaurant"
+            },
+            {
+              "rank": "Silver",
+              "name": "The Beach House"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Merriman's Kauaʻi"
+            },
+            {
+              "rank": "Finalist",
+              "name": "RumFire Poʻipū Beach"
+            }
+          ]
+        },
+        {
+          "category": "Best Overall Japanese",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Yohei Sushi"
+            },
+            {
+              "rank": "Silver",
+              "name": "Zigu"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Restaurant I-naba"
+            }
+          ]
+        },
+        {
+          "category": "Best Tonkatsu",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Tonkatsu Tamafuji"
+            },
+            {
+              "rank": "Silver",
+              "name": "Ginza Bairin"
+            },
+            {
+              "rank": "Bronze",
+              "name": "Nana Ai Katsu"
+            }
+          ]
+        },
+        {
+          "category": "Best Thai",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Thai Issan Cuisine"
+            }
+          ]
+        },
+        {
+          "category": "Best Mexican",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Da Seafood Cartel"
+            }
+          ]
+        },
+        {
+          "category": "Best Mediterranean",
+          "winners": [
+            {
+              "rank": "Finalist",
+              "name": "Botanico Waikīkī"
+            }
+          ]
+        },
+        {
+          "category": "Old-School Restaurant We Love",
+          "winners": [
+            {
+              "rank": "Winner",
+              "name": "Anna Miller's"
+            }
+          ]
+        },
+        {
+          "category": "Restaurateur of the Year",
+          "winners": [
+            {
+              "rank": "Winner",
+              "name": "Chancelor Kim and Dong Dang (Chao Restaurant Group)",
+              "slug": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "source": "https://www.honolulumagazine.com/2025-hale-aina-award-winners/",
+      "notes": "Announced June 2, 2025. Selected categories shown.",
+      "categories": [
+        {
+          "category": "Best New Restaurant",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Giovedì"
+            }
+          ]
+        },
+        {
+          "category": "Best Izakaya",
+          "winners": [
+            {
+              "rank": "Gold",
+              "name": "Izakaya Naru"
+            }
+          ]
+        },
+        {
+          "category": "Best Buffet",
+          "winners": [
+            {
+              "rank": "Winner",
+              "name": "Plumeria Beach House"
+            }
+          ]
+        },
+        {
+          "category": "Old-School Restaurant We Love",
+          "winners": [
+            {
+              "rank": "Winner",
+              "name": "Kim Chee II"
+            }
+          ]
+        },
+        {
+          "category": "Restaurateur of the Year",
+          "winners": [
+            {
+              "rank": "Winner",
+              "name": "Peter Kim (Yummy Restaurant Group)",
+              "slug": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
