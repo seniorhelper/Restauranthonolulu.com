@@ -1,0 +1,42 @@
+name: Build site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ['data/**', 'src/**', '.github/workflows/build.yml']
+  schedule:
+    - cron: '17 10 * * *' # daily, 12:17 am Hawaiʻi time (date-based content like the promo end date)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm run check
+
+  build:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm run build
+      - run: node src/validate.mjs
+      - name: Commit generated files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Rebuild generated pages"
+            git push
+          fi

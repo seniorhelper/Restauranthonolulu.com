@@ -1,0 +1,11 @@
+{
+  "name": "restauranthonolulu",
+  "private": true,
+  "type": "module",
+  "description": "Static site generator for restauranthonolulu.com. Edit data/*.json, then run npm run build.",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "check": "node src/build.mjs --check && node src/validate.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
