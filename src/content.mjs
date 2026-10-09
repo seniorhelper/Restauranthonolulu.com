@@ -159,7 +159,7 @@ ${c.chips([['/restaurants/', 'Full directory'], ['/neighborhoods/', 'By neighbor
     sitemapTitle: 'Guides',
     render(c) {
       const { GUIDES, esc } = c;
-      const more = [['/guides/how-to-eat-honolulu/', 'Three days of eating in Honolulu', 'A day-by-day plan with specific restaurants.'], ['/guides/plate-lunch/', 'What is a plate lunch?', 'What you get and where to order one.'], ['/guides/reservations/', 'Do you need reservations?', 'Which places book out and which are walk-in.'], ['/hale-aina-awards/', 'Hale ʻAina Awards', 'This year’s winners, linked.'], ['/new-openings/', 'New openings', 'Opened in 2025–2026.'], ['/closed/', 'Closures tracker', 'What closed in 2026.']];
+      const more = [['/guides/how-to-eat-honolulu/', 'Three days of eating in Honolulu', 'A day-by-day plan with specific restaurants.'], ['/guides/plate-lunch/', 'What is a plate lunch?', 'What you get and where to order one.'], ['/guides/reservations/', 'Do you need reservations?', 'Which places book out and which are walk-in.'], ['/guides/menu-glossary/', 'Menu glossary', 'Poke, saimin, laulau, ahi, ono and other menu words explained.'], ['/hale-aina-awards/', 'Hale ʻAina Awards', 'This year’s winners, linked.'], ['/new-openings/', 'New openings', 'Opened in 2025–2026.'], ['/closed/', 'Closures tracker', 'What closed in 2026.']];
       return `${c.head({ h1: 'Guides', intro: 'Short, practical and specific.', crumbItems: [['/', 'Home'], ['/guides/', 'Guides']] })}
 <div class="wrap"><div class="tiles">${GUIDES.map((g) => `<a class="tile" href="${g.path}"><strong>${esc(g.h1)}</strong><span>${esc(g.intro)}</span></a>`).join('')}${more.map(([u, t, d]) => `<a class="tile" href="${u}"><strong>${t}</strong><span>${d}</span></a>`).join('')}</div></div>`;
     },
@@ -215,6 +215,69 @@ ${c.tips(['Sunset seatings at oceanfront rooms: book 1–2 weeks ahead, longer a
 <section class="sec"><h2>Book ahead</h2>${c.grid(need)}</section>
 <section class="sec"><h2>Walk in</h2>${c.grid(walk)}</section>
 </div>`;
+    },
+  },
+
+  {
+    path: '/guides/menu-glossary/', title: T('Honolulu Menu Glossary – Local Food Words Explained'), group: 'Guides',
+    description: 'What poke, saimin, loco moco, manapua, laulau, haupia, li hing mui and Hawaiʻi fish names like ahi, ono and ʻōpakapaka mean on Honolulu menus.',
+    sitemapTitle: 'Menu glossary',
+    render(c) {
+      const sec = (h, rows) => `<section class="box"><h2>${h}</h2><ul>${rows.map(([t, d]) => `<li><strong>${t}</strong> — ${d}</li>`).join('')}</ul></section>`;
+      const qa = [
+        ['What does “ono” mean on a menu?', 'It can mean two things. As a fish, ono is wahoo, a firm white fish often grilled or served in fish tacos. As a Hawaiian word, ʻono means delicious, so “ono grinds” is simply good food.'],
+        ['What is the difference between poke and sashimi?', 'Sashimi is sliced raw fish served plain with soy sauce and wasabi on the side. Poke is raw fish cut into cubes and tossed with seasonings such as shoyu, sesame oil, onions, seaweed (limu) or roasted kukui nut (ʻinamona), and it is often served over rice as a poke bowl.'],
+        ['What is a kamaʻāina discount?', 'Kamaʻāina means a long-time resident of Hawaiʻi. Some restaurants and attractions offer a kamaʻāina rate to residents who show a Hawaiʻi ID. Visitors pay the regular price.'],
+      ];
+      return {
+        body: `${c.head({ kicker: 'Guide', h1: 'Honolulu menu glossary', intro: 'Local menus mix Hawaiian, Japanese, Chinese, Korean, Filipino and Portuguese words. Here is what the common ones mean, so you can order with confidence.', photoTopic: 'plate-lunch', crumbItems: [['/', 'Home'], ['/guides/', 'Guides'], ['/guides/menu-glossary/', 'Menu glossary']] })}
+<div class="wrap">
+<div class="two-col">
+${sec('Everyday local food', [
+  ['Plate lunch', 'two scoops of rice, a scoop of macaroni salad and a main. See <a href="/guides/plate-lunch/">what is a plate lunch</a>.'],
+  ['Mixed plate', 'a plate lunch with two or three mains.'],
+  ['Loco moco', 'rice topped with a hamburger patty, a fried egg and brown gravy. It was created on the Big Island and is now an all-day local staple.'],
+  ['Spam musubi', 'a slice of grilled Spam on a block of rice, wrapped with nori. Sold everywhere from convenience stores to cafés.'],
+  ['Saimin', 'a noodle soup in a light dashi-style broth, topped with green onion, fish cake and often char siu. It grew out of Hawaiʻi’s plantation era, when many cultures shared kitchens.'],
+  ['Manapua', 'Hawaiʻi’s name for a large steamed or baked bun filled with char siu pork, similar to Chinese bao.'],
+  ['Pūpū', 'appetizers or snacks, especially with drinks. A pūpū platter is a shared plate.'],
+])}
+${sec('Hawaiian dishes', [
+  ['Kālua pig', 'pork traditionally cooked in an underground oven (imu) until smoky and tender, then shredded.'],
+  ['Laulau', 'pork or fish wrapped in taro leaves (lūʻau) and ti leaves and steamed until soft.'],
+  ['Lomi salmon', 'salted salmon mixed with tomato and onion, served cold as a side.'],
+  ['Poi', 'cooked taro root pounded into a smooth paste. Mild and slightly sour; eat it alongside salty dishes.'],
+  ['Squid lūʻau', 'taro leaves stewed with coconut milk and squid or octopus.'],
+  ['Haupia', 'a firm coconut milk pudding, cut into squares. Also a popular pie and cake flavor.'],
+])}
+</div>
+<div class="two-col">
+${sec('Fish names', [
+  ['Ahi', 'yellowfin or bigeye tuna. The most common fish for poke and seared dishes.'],
+  ['Aku', 'skipjack tuna, stronger in flavor than ahi.'],
+  ['Mahimahi', 'dolphinfish (not the mammal). Mild, flaky and often grilled or in sandwiches.'],
+  ['Ono', 'wahoo. Firm and white; great grilled.'],
+  ['ʻŌpakapaka', 'pink snapper, delicate and often steamed or pan-seared at nicer restaurants.'],
+  ['Onaga', 'red snapper, prized for special occasions.'],
+])}
+${sec('Sweets, snacks and seasonings', [
+  ['Shoyu', 'the local word for soy sauce. Shoyu chicken and shoyu poke are classics.'],
+  ['Furikake', 'a Japanese seasoning of seaweed and sesame, sprinkled on rice, poke and even popcorn.'],
+  ['Li hing mui', 'salty-sweet dried plum. The red powder is dusted on shave ice, candy, fruit and drink rims.'],
+  ['Shave ice', 'ice shaved as fine as snow and soaked with syrups, often with ice cream or sweet azuki beans underneath. See <a href="/best/shave-ice/">shave ice</a>.'],
+  ['Malasada', 'a Portuguese-style fried doughnut with no hole, rolled in sugar and sometimes filled. See <a href="/best/malasadas-bakeries/">malasadas and bakeries</a>.'],
+  ['Poke', 'cubed, seasoned raw fish. See <a href="/poke-honolulu/">poke in Honolulu</a>.'],
+])}
+</div>
+${c.tips(['“Two scoop rice” is the default; ask for brown rice or “mix plate” (half rice, half greens) if you want lighter.', 'Ordering “local style” usually means with rice and macaroni salad.', '“Broke da mouth” is local slang for very delicious.'])}
+<section class="sec"><h2>Common questions</h2><div class="narrow faq">${qa.map(([q, a]) => `<details open><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section>
+<p class="small muted">Want to try the Hawaiian dishes above? Start with our <a href="/hawaiian-food-honolulu/">Hawaiian food</a> list.</p>
+</div>`,
+        jsonld: [
+          { '@type': 'Article', headline: 'Honolulu menu glossary: local food words explained', datePublished: '2026-10-09', dateModified: '2026-10-09', author: { '@type': 'Organization', name: 'Restaurant Honolulu' }, publisher: { '@type': 'Organization', name: 'Eye To Ad Media' } },
+          { '@type': 'FAQPage', mainEntity: qa.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+        ],
+      };
     },
   },
 
@@ -278,7 +341,7 @@ ${field('Restaurant (if any)', 'restaurant', { attrs: 'data-prefill-name' })}
 ${field('Your name', 'name', { required: true })}
 ${field('Email', 'email', { type: 'email', required: true })}
 ${area('Message', 'message', { required: true, rows: 5 })}` })}
-<p class="small muted">Or email <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>.</p>
+<p class="small muted">Or <a class="eml" data-a="${c.SITE.formA}" data-b="${c.SITE.formB}" data-s="Message — restauranthonolulu.com" href="tel:+18004818638">email us</a>.</p>
 </div>`;
     },
   },

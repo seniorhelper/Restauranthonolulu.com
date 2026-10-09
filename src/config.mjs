@@ -5,7 +5,9 @@ export const SITE = {
   url: 'https://restauranthonolulu.com',
   phone: '1-800-481-8638',
   phoneHref: 'tel:+18004818638',
-  formAction: 'https://formsubmit.co/info@eyetoad.com',
+  // Lead address is assembled in the browser from base64 parts so it never appears in the HTML.
+  formA: 'aW5mbw==',
+  formB: 'ZXlldG9hZC5jb20=',
   thanks: 'https://restauranthonolulu.com/advertise/thanks/',
   gsv: 'icW4qYCnlgvHEoVnnSu2Kq708ajPRLDUub723g8njgQ',
   tz: 'Pacific/Honolulu',
