@@ -469,17 +469,20 @@ function contentPages() {
   }
 }
 
-// Inquiry forms post to formsubmit (same as the previous site).
+// Inquiry forms: FormSubmit AJAX (see assets/app.js). The address is assembled at
+// runtime from data-a/data-b, so no email address appears in the HTML.
 function form({ subject, fields, button, extraHidden = '' }) {
-  return `<form class="form" action="${SITE.formAction}" method="POST">
-<input type="hidden" name="_subject" value="${esc(subject)}">
-<input type="hidden" name="_next" value="${SITE.thanks}">
+  const kind = subject.replace(/\s*—\s*RestaurantHonolulu\.com$/i, '');
+  const subj = `New lead — restauranthonolulu.com${kind && kind !== subject ? ` · ${kind}` : ''}`;
+  return `<form class="form fs-lead" data-a="${SITE.formA}" data-b="${SITE.formB}" method="POST">
+<input type="hidden" name="_subject" value="${esc(subj)}">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 ${extraHidden}
 <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 ${fields}
 <button class="btn" type="submit">${esc(button)}</button>
+<p class="fs-status small" role="status" aria-live="polite"></p>
 </form>`;
 }
 

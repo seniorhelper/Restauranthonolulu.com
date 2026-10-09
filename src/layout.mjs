@@ -14,7 +14,7 @@ const NAV = [
 export function layout({ path, title, description, body, jsonld = [], ogImage, noindex = false, canonical, assetsV }) {
   const url = SITE.url + (canonical || path);
   const og = ogImage || `${SITE.url}/images/best-restaurants-honolulu.jpg`;
-  const ld = jsonld.length ? `<script type="application/ld+json">${JSON.stringify(jsonld.length === 1 ? jsonld[0] : { '@context': 'https://schema.org', '@graph': jsonld.map(({ ['@context']: _, ...x }) => x) }).replace(/</g, '\\u003c')}</script>` : '';
+  const ld = jsonld.length ? `<script type="application/ld+json">${JSON.stringify(jsonld.length === 1 ? { '@context': 'https://schema.org', ...jsonld[0] } : { '@context': 'https://schema.org', '@graph': jsonld.map(({ ['@context']: _, ...x }) => x) }).replace(/</g, '\\u003c')}</script>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +114,7 @@ function footer() {
   </div>
   <div class="legal">
     <span>© 2026 Restaurant Honolulu · Powered by <a href="https://www.eyetoad.com" rel="noopener">Eye To Ad Media</a></span>
-    <span>Made with <span aria-label="love">♥</span> in Honolulu · <a href="https://www.eyetoad.com" rel="noopener">Need a website?</a></span>
+    <span>Made with <span aria-label="love">♥</span> in Honolulu · Need a website? <a href="tel:+18004818638">1-800-481-8638</a></span>
   </div>
 </footer>`;
 }

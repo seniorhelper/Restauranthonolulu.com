@@ -182,6 +182,29 @@
     });
   }
 
+  // ---------- lead forms: FormSubmit AJAX, address assembled at runtime ----------
+  var t0 = Date.now();
+  function addr(el) { return atob(el.getAttribute('data-a')) + String.fromCharCode(64) + atob(el.getAttribute('data-b')); }
+  $$('a.eml').forEach(function (a) { var s = a.getAttribute('data-s'); a.href = 'mailto:' + addr(a) + (s ? '?subject=' + encodeURIComponent(s) : ''); });
+  $$('form.fs-lead').forEach(function (f) {
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var st = $('.fs-status', f);
+      function say(m, ok) { if (st) { st.textContent = m; st.style.color = ok ? '#1d6f4c' : '#b13a22'; } }
+      var hp = $('[name="_honey"]', f);
+      if (hp && hp.value) return;
+      if (Date.now() - t0 < 3500) { say('Give the form a moment, then send again.'); return; }
+      var req = $$('[required]', f);
+      for (var i = 0; i < req.length; i++) { var r = req[i], empty = (r.type === 'checkbox' || r.type === 'radio') ? !r.checked : !String(r.value || '').trim(); if (empty) { say('Please fill in the required fields.'); try { r.focus(); } catch (e) {} return; } }
+      var btn = $('[type="submit"]', f); if (btn) btn.disabled = true;
+      fetch('https://formsubmit.co/ajax/' + addr(f), { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(f) })
+        .then(function (res) { if (!res.ok) throw new Error('bad'); return res.json(); })
+        .then(function (j) { if (j && (j.success === false || j.success === 'false')) throw new Error('bad'); say("Sent. We'll get back to you shortly.", true); f.reset(); })
+        .catch(function () { say('That did not go through. Please call 1-800-481-8638.'); })
+        .then(function () { if (btn) btn.disabled = false; });
+    });
+  });
+
   paintOpen();
   setInterval(paintOpen, 60000);
 })();
