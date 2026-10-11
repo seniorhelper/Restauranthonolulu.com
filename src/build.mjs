@@ -332,6 +332,7 @@ ${!isOpen ? `<div class="closed-banner" role="status"><strong>${r.status === 'te
       <p class="small"><a href="/contact/?r=${r.slug}">Report a change</a></p>
     </section>
     <p class="small muted claim-line">Own ${esc(r.name)}? <a href="/claim/?r=${r.slug}">Claim this page free</a> to correct details.</p>
+    <p class="small muted lr-claim">Want it kept current for you? <a href="https://linkrestaurants.com/claim/">Claim &amp; Optimize</a> from $9.99/mo.</p>
   </aside>
 </div>
 ${near.length ? `<section id="near" class="near"><h2>${isOpen ? 'Similar nearby' : 'Open alternatives nearby'}</h2>${grid(near.map((x) => x.o), (o) => ({ note: Number.isFinite(miles(r, o)) ? `${miles(r, o).toFixed(1)} mi away` : '' }))}</section>` : ''}

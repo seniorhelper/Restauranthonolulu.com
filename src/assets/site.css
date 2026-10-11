@@ -311,6 +311,7 @@ textarea { min-height: 0; }
 .ftr h2 { font: 700 .8rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: #fff; margin-bottom: .6rem; }
 .ftr ul { list-style: none; padding: 0; margin: 0; }
 .ftr li { margin: .35rem 0; }
+.ftr-claim { font-size: .85rem; color: rgba(243, 247, 244, .7); }
 .ftr-brand img { width: 240px; max-width: 100%; height: auto; margin-bottom: .6rem; }
 .xpromo { margin-top: 1rem; font-size: .88rem; }
 .legal { max-width: 1160px; margin: 0 auto; padding: 1rem 16px 1.6rem; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; font-size: .85rem; }
@@ -360,6 +361,7 @@ textarea { min-height: 0; }
 .tile-tool { border-color: var(--lagoon); background: var(--lagoon-soft); }
 .owner-line, .claim-line { margin: 1.5rem 0 0; }
 .claim-line { margin: .5rem 0 0; }
+.lr-claim { margin: .35rem 0 0; }
 
 /* long URLs (sources, websites) must wrap on small phones */
 main a, main dd { overflow-wrap: anywhere; }

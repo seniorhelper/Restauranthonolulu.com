@@ -99,6 +99,7 @@ function footer() {
       <h2>For restaurants</h2>
       <ul>
         <li><a href="/claim/">Claim your listing (free)</a></li>
+        <li><a href="https://linkrestaurants.com/claim/">Claim &amp; Optimize (from $9.99/mo)</a></li>
         <li><a href="/advertise/">Advertise on this site</a></li>
         <li><a href="https://advertisingforrestaurant.com" rel="noopener">Advertising for restaurants</a></li>
         <li><a href="https://www.bigislandseo.com" rel="noopener">Hawaii SEO</a></li>
