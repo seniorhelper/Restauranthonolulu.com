@@ -361,7 +361,7 @@ textarea { min-height: 0; }
 .tile-tool { border-color: var(--lagoon); background: var(--lagoon-soft); }
 .owner-line, .claim-line { margin: 1.5rem 0 0; }
 .claim-line { margin: .5rem 0 0; }
-.lr-claim { margin: .9rem 0 0; }
+.lr-claim { margin: .35rem 0 0; }
 
 /* long URLs (sources, websites) must wrap on small phones */
 main a, main dd { overflow-wrap: anywhere; }

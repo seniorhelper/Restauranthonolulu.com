@@ -77,7 +77,6 @@ function footer() {
       <a href="/"><img src="/images/restaurant-honolulu-logo-reversed.webp" width="600" height="400" alt="Restaurant Honolulu" loading="lazy"></a>
       <p>Independent dining guide for Honolulu, Waikīkī and Oʻahu.</p>
       <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a></p>
-      <p class="ftr-claim">Own a restaurant on this guide? <a href="https://linkrestaurants.com/claim/">Claim it</a></p>
     </div>
     <div>
       <h2>Explore</h2>
@@ -100,6 +99,7 @@ function footer() {
       <h2>For restaurants</h2>
       <ul>
         <li><a href="/claim/">Claim your listing (free)</a></li>
+        <li><a href="https://linkrestaurants.com/claim/">Claim &amp; Optimize (from $9.99/mo)</a></li>
         <li><a href="/advertise/">Advertise on this site</a></li>
         <li><a href="https://advertisingforrestaurant.com" rel="noopener">Advertising for restaurants</a></li>
         <li><a href="https://www.bigislandseo.com" rel="noopener">Hawaii SEO</a></li>
