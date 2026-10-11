@@ -311,8 +311,55 @@ textarea { min-height: 0; }
 .ftr h2 { font: 700 .8rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: #fff; margin-bottom: .6rem; }
 .ftr ul { list-style: none; padding: 0; margin: 0; }
 .ftr li { margin: .35rem 0; }
-.ftr-brand img { width: 130px; background: #fff; border-radius: 12px; padding: 6px; margin-bottom: .8rem; }
+.ftr-brand img { width: 240px; max-width: 100%; height: auto; margin-bottom: .6rem; }
 .xpromo { margin-top: 1rem; font-size: .88rem; }
 .legal { max-width: 1160px; margin: 0 auto; padding: 1rem 16px 1.6rem; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; font-size: .85rem; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* photos: <picture> inside figure.ph */
+.ph picture { display: block; width: 100%; height: 100%; }
+.ph-note { margin: .5rem 0 0; }
+
+/* tools: meal planner, near-my-hotel, map */
+.tool-form { display: grid; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; margin-bottom: 1.2rem; }
+.tool-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.tool-form legend, .tool-row > label:not(.tog) { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 6px; padding: 0; }
+.tool-row > label:not(.tog) { display: grid; gap: 4px; min-width: 0; }
+.tool-row > label select { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.tool-row { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .tool-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tool-row-checks { display: flex; flex-wrap: wrap; gap: 8px; }
+.chipset { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip span { padding: .45rem .8rem; border-radius: 999px; border: 1px solid var(--line); font-size: .88rem; font-weight: 600; background: #fff; min-height: 40px; display: inline-flex; align-items: center; }
+.chip input:checked + span { background: var(--sea); color: #fff; border-color: var(--sea); }
+.chip input:focus-visible + span { outline: 3px solid var(--sun); }
+.tool-actions { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tool-out:empty { display: none; }
+.tool-out { margin-bottom: 1.5rem; }
+.tool-h { font-size: 1.35rem; margin: .5rem 0 .8rem; }
+.tool-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; margin-bottom: 10px; }
+.tool-card h3 { font-size: 1.15rem; margin: 0 0 .2rem; }
+.tool-card h3 a { text-decoration: none; }
+.tool-card p { margin: .25rem 0; }
+.tool-card .why { color: var(--ink-2); }
+.evening { background: var(--lagoon-soft); border-radius: var(--radius); padding: .9rem 1rem; }
+.plan { padding-left: 1.2rem; margin: 0 0 .5rem; }
+.plan li { margin: .4rem 0; }
+.near-list { padding-left: 1.2rem; margin: 0; }
+.near-list li { margin: .35rem 0; }
+.near-list li span { display: block; }
+.map-box { margin-bottom: .5rem; }
+.map { height: min(70vh, 520px); width: 100%; border-radius: var(--radius); border: 1px solid var(--line); background: #e8eef0; }
+.map-list { padding-left: 1.4rem; columns: 1; }
+@media (min-width: 900px) { .map-list { columns: 2; column-gap: 2rem; } }
+.map-list li { break-inside: avoid; margin: .3rem 0; }
+.map-list li[hidden] { display: none; }
+.tile-tool { border-color: var(--lagoon); background: var(--lagoon-soft); }
+.owner-line, .claim-line { margin: 1.5rem 0 0; }
+.claim-line { margin: .5rem 0 0; }
+
+/* long URLs (sources, websites) must wrap on small phones */
+main a, main dd { overflow-wrap: anywhere; }

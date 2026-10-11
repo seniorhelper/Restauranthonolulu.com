@@ -11,6 +11,8 @@ export const SITE = {
   thanks: 'https://restauranthonolulu.com/advertise/thanks/',
   gsv: 'icW4qYCnlgvHEoVnnSu2Kq708ajPRLDUub723g8njgQ',
   tz: 'Pacific/Honolulu',
+  // Google AdSense (owner decision 2026-10-10): auto ads on every page, ads.txt at the root.
+  adsense: 'ca-pub-3561679124556057',
 };
 
 // Pop-up Domination intro offer. The struck price is the regular price.
@@ -83,14 +85,14 @@ export const CUISINES = [
   { slug: 'udon-noodles', name: 'Udon & noodles', photo: 'udon', blurb: 'Udon, saimin and noodle houses.' },
   { slug: 'izakaya', name: 'Izakaya', photo: 'japanese', blurb: 'Japanese pubs with small plates and late kitchens.' },
   { slug: 'korean', name: 'Korean', photo: 'korean', blurb: 'Korean BBQ, kalbi plates and tofu soup.' },
-  { slug: 'chinese', name: 'Chinese', photo: 'dim-sum', blurb: 'Cantonese seafood, roast meats and noodle shops.' },
+  { slug: 'chinese', name: 'Chinese', photo: 'chinese', blurb: 'Cantonese seafood, roast meats and noodle shops.' },
   { slug: 'dim-sum', name: 'Dim sum', photo: 'dim-sum', blurb: 'Dumplings, char siu bao and cart-style mornings.' },
   { slug: 'vietnamese', name: 'Vietnamese', photo: 'pho', blurb: 'Pho, bánh mì and Chinatown noodle houses.' },
   { slug: 'thai', name: 'Thai', photo: 'thai', blurb: 'Curries, noodles and Thai street food.' },
   { slug: 'filipino', name: 'Filipino', photo: 'plate-lunch', blurb: 'Adobo, pancit, lechon and halo-halo.' },
   { slug: 'mexican', name: 'Mexican & tacos', photo: 'tacos', blurb: 'Tacos, burritos and taquerias.' },
   { slug: 'italian', name: 'Italian', photo: 'pasta', blurb: 'Pasta, pizza and trattorias.' },
-  { slug: 'pizza', name: 'Pizza', photo: 'pasta', blurb: 'Neapolitan, New York and local-style pies.' },
+  { slug: 'pizza', name: 'Pizza', photo: 'pizza', blurb: 'Neapolitan, New York and local-style pies.' },
   { slug: 'french', name: 'French', photo: 'fine-dining', blurb: 'Bistros and classic French dining rooms.' },
   { slug: 'american', name: 'American', photo: 'burger', blurb: 'Diners, grills and family restaurants.' },
   { slug: 'burgers', name: 'Burgers', photo: 'burger', blurb: 'Smash burgers to grass-fed Big Island beef.' },
@@ -121,6 +123,15 @@ export const ANCHORS = {
   cruise: { name: 'Aloha Tower cruise terminal (Piers 10/11, with Pier 2 nearby)', lat: 21.3069, lng: -157.8664 },
   pearl: { name: 'Pearl Harbor National Memorial visitor center', lat: 21.3678, lng: -157.9390 },
   alamoana: { name: 'Ala Moana Center', lat: 21.2911, lng: -157.8434 },
+  // Waikīkī landmarks for the near-my-hotel finder. No outside geocoder was reachable when these were
+  // added, so each one takes the coordinates of a listed restaurant inside that building (`from`).
+  rhc: { name: 'Royal Hawaiian Center', short: 'Royal Hawaiian Center', from: 'tsurutontan-waikiki', group: 'Waikīkī' },
+  halekulani: { name: 'Halekulani & Waikīkī Beach Walk', short: 'the Halekulani', from: 'house-without-a-key', group: 'Waikīkī' },
+  royalhawaiian: { name: 'The Royal Hawaiian & Sheraton Waikiki', short: 'The Royal Hawaiian', from: 'azure-royal-hawaiian', group: 'Waikīkī' },
+  outrigger: { name: 'Outrigger Waikiki Beach Resort & Moana Surfrider', short: 'the Outrigger Waikiki', from: 'dukes-waikiki', group: 'Waikīkī' },
+  hiltonkuhio: { name: 'Hilton Waikiki Beach (Kūhiō Ave)', short: 'Hilton Waikiki Beach', from: 'mac-24-7-waikiki', group: 'Waikīkī' },
+  zooend: { name: 'Kapahulu end of Waikīkī (Aston Waikiki Beach Hotel, near the Honolulu Zoo)', short: 'the Kapahulu end of Waikīkī', from: 'tikis-grill-and-bar', group: 'Waikīkī' },
+  kaimana: { name: 'Kaimana Beach Hotel & Kapiʻolani Park', short: 'the Kaimana Beach Hotel', from: 'hau-tree', group: 'Waikīkī' },
 };
 
 // "Best of" pages. `path` keeps legacy URLs; `match(r)` selects restaurants.
@@ -144,7 +155,7 @@ export const BEST = [
   { slug: 'korean', title: 'Best Korean food in Honolulu', h1: 'Korean food', photo: 'korean', intro: 'Korean BBQ and kalbi plates.', match: (r) => has(r, 'korean') },
   { slug: 'garlic-shrimp', title: 'Best garlic shrimp on Oʻahu', h1: 'Garlic shrimp', photo: 'shrimp', intro: 'Shrimp trucks and plates, mostly on the North Shore.', match: (r) => dish(r, /shrimp/i) && (has(r, 'food-truck', 'seafood')) },
   { slug: 'coffee', title: 'Best coffee in Honolulu', h1: 'Coffee', photo: 'coffee', intro: 'Cafés pouring Hawaiʻi-grown coffee.', match: (r) => has(r, 'coffee') },
-  { slug: 'date-night', title: 'Date-night restaurants in Honolulu', h1: 'Date night', photo: 'cocktails', intro: 'Reservable dinner rooms at $30+ a person.', match: (r) => r.price >= 3 && r.tags.reservations && servesDinner(r) },
+  { slug: 'date-night', title: 'Date-night restaurants in Honolulu', h1: 'Date night', photo: 'date-night', intro: 'Reservable dinner rooms at $30+ a person.', match: (r) => r.price >= 3 && r.tags.reservations && servesDinner(r) },
   { slug: 'kid-friendly', title: 'Kid-friendly restaurants in Honolulu', h1: 'Kid-friendly restaurants', photo: 'shave-ice', intro: 'Casual places that welcome families.', match: (r) => r.tags.kid_friendly },
   { slug: 'vegan', title: 'Vegan-friendly restaurants in Honolulu', h1: 'Vegan-friendly', photo: 'vegan', intro: 'Fully plant-based restaurants and places with real vegan dishes.', match: (r) => r.tags.vegan_options || has(r, 'vegan-vegetarian') },
   { slug: 'mai-tais', title: 'Where to drink a mai tai in Waikīkī', h1: 'Mai tais & sunset drinks', photo: 'cocktails', intro: 'Ocean-view bars and restaurants with a bar program.', match: (r) => r.tags.ocean_view && (r.happy_hour || has(r, 'bar-pub', 'cocktail-bar')) },
@@ -160,6 +171,9 @@ export const GUIDES = [
   { slug: 'near-cruise-pier', path: '/guides/near-cruise-pier/', title: 'Where to eat near the Honolulu cruise pier', h1: 'Near the cruise pier', photo: 'harbor', anchor: 'cruise', radius: 1.6, intro: 'Restaurants within walking distance or a short ride of the Aloha Tower cruise terminal and Pier 2.', tips: ['Chinatown is about a 10-minute walk from Aloha Tower; Kakaʻako is a 5-minute ride.', 'Downtown lunch counters often close by 2 pm and on weekends — check hours on each page.'] },
   { slug: 'near-pearl-harbor', path: '/guides/near-pearl-harbor/', title: 'Where to eat near Pearl Harbor', h1: 'Near Pearl Harbor', photo: 'plate-lunch', anchor: 'pearl', radius: 4.5, intro: 'Meals within a short drive of the Pearl Harbor National Memorial. Bags are not allowed at the memorial, so eat before or after.', tips: ['The memorial has a small snack bar only; plan a real meal before or after.', 'Pearlridge Center and ʻAiea have the closest sit-down options.'] },
   { slug: 'ala-moana', path: '/guides/ala-moana-center/', title: 'Where to eat at and around Ala Moana Center', h1: 'Ala Moana Center', photo: 'shopping', anchor: 'alamoana', radius: 1, intro: 'Restaurants in and within a mile of Ala Moana Center, the walkable area between Waikīkī and Kakaʻako.', tips: ['Mall parking is free; the Ewa-side decks fill first on weekends.'] },
+  { slug: 'near-royal-hawaiian-center', path: '/guides/near-royal-hawaiian-center/', title: 'Restaurants near Royal Hawaiian Center, Waikīkī', h1: 'Near Royal Hawaiian Center', photo: 'sunset', anchor: 'rhc', radius: 0.5, walk: true, intro: 'Places to eat within about half a mile of Royal Hawaiian Center, the shopping center in the middle of the Kalākaua Avenue beachfront. A few are inside the center itself.', tips: ['Distances are straight lines from the center; the walk along Kalākaua or Kūhiō is a little longer.', 'Walking times assume about 80 metres (260 feet) a minute and are estimates only.', 'Use the <a href="/near-my-hotel/">near-my-hotel finder</a> to start from a different hotel or from where you are standing.'] },
+  { slug: 'near-halekulani-beach-walk', path: '/guides/near-halekulani-beach-walk/', title: 'Restaurants near the Halekulani & Beach Walk', h1: 'Near the Halekulani & Beach Walk', photo: 'sunset', anchor: 'halekulani', radius: 0.5, walk: true, intro: 'The ʻEwa (west) end of Waikīkī: the Halekulani, the Outrigger Reef and the Waikīkī Beach Walk shops on Lewers Street and Beach Walk, with everything within about half a mile.', tips: ['Sunset tables on the beachfront here book out first; reserve a week or more ahead.', 'Walking times assume about 80 metres (260 feet) a minute and are estimates only.', 'Starting from another hotel? Try the <a href="/near-my-hotel/">near-my-hotel finder</a>.'] },
+  { slug: 'near-kapiolani-park', path: '/guides/near-kapiolani-park/', title: 'Restaurants near Kapiʻolani Park & the Zoo', h1: 'Near Kapiʻolani Park & the Honolulu Zoo', photo: 'sunset', anchor: 'zooend', radius: 0.8, walk: true, intro: 'The Diamond Head end of Waikīkī, by the Honolulu Zoo and Kapiʻolani Park, where Kalākaua meets Kapahulu Avenue. Kapahulu’s poke, plate lunch and shave ice are a short walk or ride inland.', tips: ['Kapahulu Avenue starts at the zoo; its best-known food stops run about a mile up the avenue.', 'Walking times assume about 80 metres (260 feet) a minute and are estimates only.', 'See the <a href="/near-my-hotel/">near-my-hotel finder</a> for other starting points.'] },
   { slug: 'eats-under-15', path: '/guides/eats-under-15/', title: 'Honolulu eats under $15', h1: 'Eats under $15', photo: 'musubi', intro: 'Places where a full meal is about $15 or less per person.', tips: ['Plate lunch, poke by the pound, musubi and bakery runs are the budget staples.', 'Prices change often; the $ rating means under about $15 per person.'] },
 ];
 

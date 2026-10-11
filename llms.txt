@@ -3,11 +3,18 @@
 
 - Directory: https://restauranthonolulu.com/restaurants/
 - Search index (JSON): https://restauranthonolulu.com/search-index.json
-- Closures tracker: https://restauranthonolulu.com/closed/
+- Recently closed (confirmed permanent closures, with sources; these have no restaurant pages): https://restauranthonolulu.com/closed/
 - New openings: https://restauranthonolulu.com/new-openings/
 - Hale ʻAina Awards: https://restauranthonolulu.com/hale-aina-awards/
 - Publisher: Eye To Ad Media (https://www.eyetoad.com)
-- Advertising: https://restauranthonolulu.com/advertise/ · 1-800-481-8638 (owners only)
+- Open data (JSON, open restaurants with sources and verification dates): https://restauranthonolulu.com/restaurants.json
+- Tools: meal planner https://restauranthonolulu.com/meal-planner/ · near-my-hotel finder https://restauranthonolulu.com/near-my-hotel/ · map https://restauranthonolulu.com/map/
+- Restaurant owners: https://restauranthonolulu.com/claim/ (free corrections) · https://restauranthonolulu.com/advertise/
+
+## Data notes
+- Every restaurant page shows a "Last verified" date and its sources. Hours are shown only when confirmed; otherwise the page says so.
+- Coordinates are approximate (about 100 m); their original source is not recorded. Places without coordinates are not mapped.
+- No ratings or review counts are published. Sponsored listings are labeled.
 
 ## Key pages
 - [Restaurant directory](https://restauranthonolulu.com/restaurants/)
@@ -97,13 +104,19 @@
 - [Happy hour](https://restauranthonolulu.com/happy-hour-honolulu/)
 - [Open late](https://restauranthonolulu.com/open-late/)
 - [New openings](https://restauranthonolulu.com/new-openings/)
-- [Closures tracker](https://restauranthonolulu.com/closed/)
+- [Recently closed](https://restauranthonolulu.com/closed/)
 - [Hale ʻAina Awards](https://restauranthonolulu.com/hale-aina-awards/)
 - [Where to eat near Honolulu Airport (HNL)](https://restauranthonolulu.com/guides/near-honolulu-airport/)
 - [Where to eat near the Honolulu cruise pier](https://restauranthonolulu.com/guides/near-cruise-pier/)
 - [Where to eat near Pearl Harbor](https://restauranthonolulu.com/guides/near-pearl-harbor/)
 - [Where to eat at and around Ala Moana Center](https://restauranthonolulu.com/guides/ala-moana-center/)
+- [Restaurants near Royal Hawaiian Center, Waikīkī](https://restauranthonolulu.com/guides/near-royal-hawaiian-center/)
+- [Restaurants near the Halekulani & Beach Walk](https://restauranthonolulu.com/guides/near-halekulani-beach-walk/)
+- [Restaurants near Kapiʻolani Park & the Zoo](https://restauranthonolulu.com/guides/near-kapiolani-park/)
 - [Honolulu eats under $15](https://restauranthonolulu.com/guides/eats-under-15/)
+- [Build your perfect meal](https://restauranthonolulu.com/meal-planner/)
+- [Restaurants near my hotel](https://restauranthonolulu.com/near-my-hotel/)
+- [Restaurant map](https://restauranthonolulu.com/map/)
 - [Home](https://restauranthonolulu.com/)
 - [Places to eat in Honolulu](https://restauranthonolulu.com/places-to-eat-honolulu/)
 - [Oʻahu restaurants (island-wide)](https://restauranthonolulu.com/oahu-restaurants/)
@@ -114,6 +127,7 @@
 - [Menu glossary](https://restauranthonolulu.com/guides/menu-glossary/)
 - [FAQ](https://restauranthonolulu.com/faq/)
 - [About](https://restauranthonolulu.com/about/)
+- [Privacy & cookies](https://restauranthonolulu.com/privacy/)
 - [Contact](https://restauranthonolulu.com/contact/)
 - [Advertise](https://restauranthonolulu.com/advertise/)
 - [Pop-up Domination](https://restauranthonolulu.com/advertise/pop-up-domination/)

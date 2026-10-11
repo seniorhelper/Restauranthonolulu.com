@@ -25,12 +25,42 @@
     "alt": ""
   },
   "sushi": {
-    "id": "sZZntzJO7a0",
-    "photographer": "KJ Ye",
+    "id": null,
+    "photographer": null,
     "photographer_url": null,
-    "page": "https://unsplash.com/photos/a-plate-of-food-sZZntzJO7a0",
-    "file": null,
-    "alt": ""
+    "page": null,
+    "base": "images/photos/honolulu-sushi-restaurants",
+    "alt": "Platter of assorted sushi rolls on a wooden board",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-sushi-restaurants-1600.webp",
+    "w": 1600,
+    "h": 900,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "sushi-rolls-platter"
   },
   "ramen": {
     "id": "AlqXysqUjA8",
@@ -73,12 +103,38 @@
     "alt": ""
   },
   "tacos": {
-    "id": "4p5t91rONXE",
-    "photographer": "Rosea Creates",
+    "id": null,
+    "photographer": null,
     "photographer_url": null,
-    "page": "https://unsplash.com/photos/a-plate-of-food-4p5t91rONXE",
-    "file": null,
-    "alt": ""
+    "page": null,
+    "base": "images/photos/honolulu-tacos-mexican-food",
+    "alt": "Three chicken tacos with salsa, guacamole and sour cream",
+    "hero": [
+      [
+        800,
+        449
+      ],
+      [
+        1125,
+        632
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        599
+      ]
+    ],
+    "file": "images/photos/honolulu-tacos-mexican-food-1125.webp",
+    "w": 1125,
+    "h": 632,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "chicken-tacos-salsa-guacamole"
   },
   "skyline": {
     "id": null,
@@ -86,6 +142,8 @@
     "photographer_url": null,
     "page": null,
     "file": "images/photos/honolulu-skyline.webp",
+    "base": "images/photos/honolulu-skyline",
+    "hero": [[800, 534], [1200, 800], [1600, 1067]],
     "alt": "Honolulu skyline and the Koʻolau mountains from the water",
     "w": 1600,
     "h": 1067,
@@ -97,6 +155,9 @@
     "photographer_url": null,
     "page": null,
     "file": "images/photos/waikiki-water.webp",
+    "base": "images/photos/waikiki-water",
+    "card": [[400, 300], [800, 600]],
+    "hero": [[800, 533], [1200, 800], [1600, 1066]],
     "alt": "Outrigger canoe off Waikīkī",
     "w": 1600,
     "h": 1066,
@@ -108,6 +169,8 @@
     "photographer_url": null,
     "page": null,
     "file": "images/photos/ala-moana-aerial.webp",
+    "base": "images/photos/ala-moana-aerial",
+    "hero": [[800, 534], [1200, 800], [1600, 1067]],
     "alt": "Aerial view of Magic Island and Ala Moana",
     "w": 1600,
     "h": 1067,
@@ -119,9 +182,463 @@
     "photographer_url": null,
     "page": null,
     "file": "images/photos/ala-moana-aerial.webp",
+    "base": "images/photos/ala-moana-aerial",
+    "hero": [[800, 534], [1200, 800], [1600, 1067]],
     "alt": "Aerial view of Magic Island and Ala Moana",
     "w": 1600,
     "h": 1067,
     "note": "Supplied with the original site; owner-provided."
+  },
+  "japanese": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-japanese-izakaya-dining",
+    "alt": "Dim Japanese restaurant with soy sauce bottles on empty tables",
+    "hero": [
+      [
+        800,
+        449
+      ],
+      [
+        1125,
+        632
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        599
+      ]
+    ],
+    "file": "images/photos/honolulu-japanese-izakaya-dining-1125.webp",
+    "w": 1125,
+    "h": 632,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "sushi-restaurant-interior-soy-sauce-tables"
+  },
+  "steak": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-steakhouse-dinner",
+    "alt": "Sliced grilled steak with roasted vegetables and sauce",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1333,
+        749
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-steakhouse-dinner-1333.webp",
+    "w": 1333,
+    "h": 749,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "steak-roasted-vegetables-plate"
+  },
+  "fine-dining": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-steakhouse-dinner",
+    "alt": "Sliced grilled steak with roasted vegetables and sauce",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1333,
+        749
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-steakhouse-dinner-1333.webp",
+    "w": 1333,
+    "h": 749,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "steak-roasted-vegetables-plate"
+  },
+  "pizza": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-pizza-flatbread",
+    "alt": "Ham and mushroom flatbread pizza on a metal tray",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1500,
+        843
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-pizza-flatbread-1500.webp",
+    "w": 1500,
+    "h": 843,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "ham-mushroom-flatbread-pizza"
+  },
+  "pasta": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-italian-pasta",
+    "alt": "Pasta in meat ragù topped with grated parmesan",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1333,
+        749
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-italian-pasta-1333.webp",
+    "w": 1333,
+    "h": 749,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "pasta-ragu-parmesan"
+  },
+  "seafood": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-seafood-pasta-shrimp",
+    "alt": "Rigatoni with shrimp and mussels in a dark bowl",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1334,
+        750
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-seafood-pasta-shrimp-1334.webp",
+    "w": 1334,
+    "h": 750,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "seafood-rigatoni-shrimp-mussels"
+  },
+  "burger": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-burgers-and-fries",
+    "alt": "Cheeseburger with lettuce beside seasoned fries",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1333,
+        749
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-burgers-and-fries-1333.webp",
+    "w": 1333,
+    "h": 749,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "cheeseburger-fries-close-up"
+  },
+  "mediterranean": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-turkish-doner-wrap",
+    "alt": "Döner kebab wrap with fries and garlic sauce",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-turkish-doner-wrap-1600.webp",
+    "w": 1600,
+    "h": 900,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "doner-kebab-wrap-fries"
+  },
+  "chinese": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-chinese-spicy-stir-fry",
+    "alt": "Spicy stir-fry with dried red chilies",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-chinese-spicy-stir-fry-1600.webp",
+    "w": 1600,
+    "h": 900,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "sichuan-spicy-chili-stir-fry"
+  },
+  "date-night": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-date-night-dinner",
+    "alt": "Silhouetted couple dining by a restaurant window",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        674
+      ],
+      [
+        1500,
+        843
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-date-night-dinner-1500.webp",
+    "w": 1500,
+    "h": 843,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "couple-dining-restaurant-window-silhouette"
+  },
+  "happy-hour": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-happy-hour-night-out",
+    "alt": "Friends eating bruschetta with wine at an evening restaurant",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-happy-hour-night-out-1600.webp",
+    "w": 1600,
+    "h": 900,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "friends-eating-bruschetta-wine-night-out"
+  },
+  "group-dinner": {
+    "id": null,
+    "photographer": null,
+    "photographer_url": null,
+    "page": null,
+    "base": "images/photos/honolulu-group-seafood-dinner",
+    "alt": "Group of friends sharing a seafood dinner",
+    "hero": [
+      [
+        800,
+        450
+      ],
+      [
+        1200,
+        675
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "card": [
+      [
+        400,
+        300
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "file": "images/photos/honolulu-group-seafood-dinner-1600.webp",
+    "w": 1600,
+    "h": 900,
+    "license": "Pexels license (owner-supplied stock; commercial use, no attribution required)",
+    "representative": true,
+    "source_master": "friends-seafood-dinner-nautical-restaurant"
   }
 }
