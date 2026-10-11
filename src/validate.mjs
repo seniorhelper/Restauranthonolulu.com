@@ -13,6 +13,8 @@ const exists = (u) => {
 for (const f of files.filter((f) => f.endsWith('.html'))) {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
   for (const [, u] of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) if (!exists(u)) errors.push(`${f}: broken link ${u}`);
+  for (const [, set] of html.matchAll(/srcset="([^"]*)"/g)) for (const part of set.split(',')) { const u = part.trim().split(/\s+/)[0]; if (u.startsWith('/') && !exists(u)) errors.push(`${f}: broken srcset ${u}`); }
+  if ((html.match(/<h1[\s>]/g) || []).length > 1) errors.push(`${f}: more than one h1`);
   for (const [, j] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { JSON.parse(j); } catch { errors.push(`${f}: invalid JSON-LD`); } }
   if (!/<title>[^<]+<\/title>/.test(html)) errors.push(`${f}: missing title`);
 }

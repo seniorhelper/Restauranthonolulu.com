@@ -1,7 +1,7 @@
 // Hand-written pages. Restaurant mentions use {r:slug} tokens, which the build turns into links
 // and refuses to build if the restaurant is missing or closed.
 
-const T = (t) => `${t} | Restaurant Honolulu`;
+const T = (t) => (`${t} | Restaurant Honolulu`.length <= 60 ? `${t} | Restaurant Honolulu` : t);
 
 const field = (label, name, { type = 'text', required = false, attrs = '' } = {}) =>
   `<label>${label}${required ? '' : ' <span class="muted small">(optional)</span>'}<input name="${name}" type="${type}"${required ? ' required' : ''} ${attrs}></label>`;
@@ -30,7 +30,7 @@ ${live ? `<p class="promo-note" data-promo-live>Intro price for orders placed by
 export const PAGES = [
   // ------------------------------------------------------------------ home
   {
-    path: '/', title: 'Best Restaurants in Honolulu & Waikīkī (2026) – Search, Hours & Happy Hours',
+    path: '/', title: 'Best Restaurants in Honolulu & Waikīkī (2026 Guide)',
     description: 'Find a restaurant in Honolulu fast: search by dish, neighborhood or cuisine; filter by open now, happy hour, parking, kid-friendly, vegan and ocean view.',
     group: 'Pages', sitemapTitle: 'Home',
     render(c) {
@@ -38,7 +38,9 @@ export const PAGES = [
       const top = ranked(OPEN.filter((r) => r.awards.length && !r.sponsored)).slice(0, 6);
       const newest = OPEN.filter((r) => /^20(25|26)/.test(String(r.opened || '')) && r.confidence !== 'low').sort((a, b) => String(b.opened).localeCompare(String(a.opened))).slice(0, 4);
       const closed = CLOSED.filter((r) => String(r.closed_date || '').startsWith('2026')).sort((a, b) => String(b.closed_date).localeCompare(String(a.closed_date))).slice(0, 6);
-      const bestTiles = ['plate-lunch', 'breakfast-waikiki', 'beach-dining', 'fine-dining', 'local-favorites', 'shave-ice', 'ramen', 'malasadas-bakeries'].map((s) => BEST.find((b) => b.slug === s)).filter((b) => OPEN.some(b.match));
+      // Photo tiles only where a fitting photo exists; the local classics (no photos yet) are text tiles with real picks.
+      const photoTiles = [['/beach-dining-waikiki/', 'Beach dining in Waikīkī', 'sunset'], ['/five-star-dining/', 'Fine dining', 'fine-dining'], ['/best/date-night/', 'Date night', 'date-night'], ['/happy-hour-honolulu/', 'Happy hour', 'happy-hour'], ['/sushi-honolulu/', 'Sushi', 'sushi'], ['/best-tacos/', 'Tacos', 'tacos'], ['/cuisine/italian/', 'Italian', 'pasta'], ['/cuisine/seafood/', 'Seafood', 'seafood']];
+      const bestTiles = ['plate-lunch', 'breakfast-waikiki', 'local-favorites', 'shave-ice', 'ramen', 'malasadas-bakeries'].map((s) => BEST.find((b) => b.slug === s)).filter((b) => OPEN.some(b.match));
       const hoodTiles = ['waikiki', 'kakaako', 'chinatown', 'kaimuki', 'kapahulu', 'ala-moana', 'kailua', 'north-shore'].map((s) => HOODS[s]).filter((n) => OPEN.some((r) => r.neighborhood === n.slug));
       const sponsored = OPEN.filter((r) => r.sponsored);
       return {
@@ -61,7 +63,21 @@ ${photo('skyline', { cls: 'hero-img', eager: true })}
 <div class="wrap">
 <section class="sec">
   <div class="sec-h"><h2>Best of Honolulu</h2><a href="/best/">All lists →</a></div>
-  <div class="ptiles">${bestTiles.map((b) => `<a class="ptile" href="${bestUrl(b)}">${photo(b.photo)}<span>${esc(b.h1)}</span></a>`).join('')}</div>
+  <div class="ptiles">${photoTiles.map(([u, t, topic]) => `<a class="ptile" href="${u}">${photo(topic, { variant: 'card' })}<span>${esc(t)}</span></a>`).join('')}</div>
+  <p class="small muted ph-note">Photos are representative of the food or occasion, not taken at a specific restaurant.</p>
+</section>
+<section class="sec">
+  <div class="sec-h"><h2>Local classics</h2><a href="/guides/menu-glossary/">Menu words explained →</a></div>
+  <div class="tiles">${bestTiles.map((b) => `<a class="tile" href="${bestUrl(b)}"><strong>${esc(b.h1)}</strong><span>${esc(b.intro)}</span><span class="tile-ex">${ranked(OPEN.filter(b.match)).slice(0, 3).map((r) => esc(r.name)).join(' · ')}</span></a>`).join('')}</div>
+</section>
+<section class="sec tools-row">
+  <div class="sec-h"><h2>Plan a meal</h2></div>
+  <div class="tiles">
+    <a class="tile tile-tool" href="/meal-planner/"><strong>Build your perfect meal</strong><span>Pick a craving, budget, area and occasion. Get five matches and an optional drinks–dinner–dessert evening.</span></a>
+    <a class="tile tile-tool" href="/near-my-hotel/"><strong>Near my hotel</strong><span>Choose your Waikīkī hotel or use your location to see what is within walking distance.</span></a>
+    <a class="tile tile-tool" href="/map/"><strong>Restaurant map</strong><span>Every listed restaurant with known coordinates, filterable by cuisine and area.</span></a>
+    <a class="tile tile-tool" href="/restaurants/?f=now"><strong>Open now</strong><span>Restaurants open right now in Hawaiʻi time, where we have confirmed hours.</span></a>
+  </div>
 </section>
 <section class="sec">
   <div class="sec-h"><h2>Neighborhoods</h2><a href="/neighborhoods/">All neighborhoods →</a></div>
@@ -79,19 +95,12 @@ ${sponsored.length ? `<section class="sec"><div class="sec-h"><h2>Sponsored</h2>
 <section class="sec two">
   <div><div class="sec-h"><h2>New openings</h2><a href="/new-openings/">More →</a></div>
   <ul class="mini">${newest.map((r) => `<li><a href="${r.url}">${esc(r.name)}</a><span>${esc(HOODS[r.neighborhood].name)} · opened ${fmtDate(r.opened)}</span></li>`).join('')}</ul></div>
-  <div><div class="sec-h"><h2>Closed in 2026</h2><a href="/closed/">Tracker →</a></div>
-  <ul class="mini">${closed.map((r) => `<li><a href="${r.url}">${esc(r.name)}</a><span>${esc(HOODS[r.neighborhood].name)} · ${fmtDate(r.closed_date)}</span></li>`).join('')}</ul></div>
+  <div><div class="sec-h"><h2>Recently closed</h2><a href="/closed/">Full list →</a></div>
+  <p class="muted">Restaurants that close for good are removed from the guide. The <a href="/closed/">recently closed list</a> shows each one with its closure date and source, so you don’t make a wasted trip.</p></div>
 </section>
 </div>
-<section class="band">
-  <div class="wrap band-in">
-    <div><p class="kick">Restaurant owners</p><h2>Claim your listing free. Then get found first.</h2>
-    <p>Fix your hours and details at no cost. Upgrade to Verified, Featured or Premium, or take the top spot in every matching search with Pop-up Domination.</p>
-    <p><a class="btn" href="/claim/">Claim your listing</a> <a class="btn btn-o-light" href="/advertise/">See plans</a></p></div>
-    ${promoBlock(c)}
-  </div>
-</section>
 <div class="wrap">
+<p class="owner-line small muted">Restaurant owner? <a href="/claim/">Claim your free listing</a> to correct your details, or see <a href="/advertise/">advertising options</a>.</p>
 <section class="sec faq">
   <h2>Quick answers</h2>
   <details><summary>Where should a first-time visitor eat Hawaiian food?</summary><p>${c.rich('{r:helenas-hawaiian-food} in Kalihi (James Beard America’s Classic) or {r:highway-inn-kakaako}. Order kalua pig, laulau, lomi salmon and poi.')}</p></details>
@@ -110,7 +119,7 @@ ${sponsored.length ? `<section class="sec"><div class="sec-h"><h2>Sponsored</h2>
 
   // ------------------------------------------------------------------ legacy overview pages
   {
-    path: '/places-to-eat-honolulu/', title: T('Places to Eat in Honolulu – Quick Picks by Situation'), crumb: 'Places to eat',
+    path: '/places-to-eat-honolulu/', title: T('Places to Eat in Honolulu: Quick Picks'), crumb: 'Places to eat',
     description: 'Where to eat in Honolulu for every situation: Hawaiian food, poke, plate lunch, dim sum, sunset dinner, shave ice, late night and cheap eats.',
     sitemapTitle: 'Places to eat in Honolulu',
     render(c) {
@@ -137,7 +146,7 @@ ${c.chips([['/restaurants/', 'Full directory'], ['/neighborhoods/', 'By neighbor
     },
   },
   {
-    path: '/oahu-restaurants/', title: T('Oʻahu Restaurants Outside Honolulu – North Shore, Kailua, Ko Olina'), crumb: 'Oʻahu restaurants',
+    path: '/oahu-restaurants/', title: T('Oʻahu Restaurants Outside Honolulu'), crumb: 'Oʻahu restaurants',
     description: 'Where to eat around Oʻahu: North Shore shrimp trucks and shave ice, Kailua breakfast, Hawaiʻi Kai, Ko Olina and Pearl Harbor-area local food.',
     sitemapTitle: 'Oʻahu restaurants (island-wide)',
     render(c) {
@@ -155,17 +164,17 @@ ${c.chips([['/restaurants/', 'Full directory'], ['/neighborhoods/', 'By neighbor
   // ------------------------------------------------------------------ guides
   {
     path: '/guides/', title: T('Honolulu Dining Guides for Visitors'), crumb: 'Guides',
-    description: 'Practical Honolulu dining guides: near the airport, cruise pier and Pearl Harbor, Ala Moana Center, eats under $15, plate lunch, reservations and a three-day eating plan.',
+    description: 'Practical Honolulu dining guides: near the airport, cruise pier, Pearl Harbor and Waikīkī hotels, eats under $15, plate lunch and a three-day eating plan.',
     sitemapTitle: 'Guides',
     render(c) {
       const { GUIDES, esc } = c;
-      const more = [['/guides/how-to-eat-honolulu/', 'Three days of eating in Honolulu', 'A day-by-day plan with specific restaurants.'], ['/guides/plate-lunch/', 'What is a plate lunch?', 'What you get and where to order one.'], ['/guides/reservations/', 'Do you need reservations?', 'Which places book out and which are walk-in.'], ['/guides/menu-glossary/', 'Menu glossary', 'Poke, saimin, laulau, ahi, ono and other menu words explained.'], ['/hale-aina-awards/', 'Hale ʻAina Awards', 'This year’s winners, linked.'], ['/new-openings/', 'New openings', 'Opened in 2025–2026.'], ['/closed/', 'Closures tracker', 'What closed in 2026.']];
+      const more = [['/guides/how-to-eat-honolulu/', 'Three days of eating in Honolulu', 'A day-by-day plan with specific restaurants.'], ['/guides/plate-lunch/', 'What is a plate lunch?', 'What you get and where to order one.'], ['/guides/reservations/', 'Do you need reservations?', 'Which places book out and which are walk-in.'], ['/guides/menu-glossary/', 'Menu glossary', 'Poke, saimin, laulau, ahi, ono and other menu words explained.'], ['/hale-aina-awards/', 'Hale ʻAina Awards', 'This year’s winners, linked.'], ['/new-openings/', 'New openings', 'Opened in 2025–2026.'], ['/closed/', 'Recently closed', 'Confirmed closures, with dates and sources.']];
       return `${c.head({ h1: 'Guides', intro: 'Short, practical and specific.', crumbItems: [['/', 'Home'], ['/guides/', 'Guides']] })}
 <div class="wrap"><div class="tiles">${GUIDES.map((g) => `<a class="tile" href="${g.path}"><strong>${esc(g.h1)}</strong><span>${esc(g.intro)}</span></a>`).join('')}${more.map(([u, t, d]) => `<a class="tile" href="${u}"><strong>${t}</strong><span>${d}</span></a>`).join('')}</div></div>`;
     },
   },
   {
-    path: '/guides/how-to-eat-honolulu/', title: T('Three Days of Eating in Honolulu – A Day-by-Day Plan'), group: 'Guides',
+    path: '/guides/how-to-eat-honolulu/', title: T('Three Days of Eating in Honolulu: Day-by-Day Plan'), group: 'Guides',
     description: 'A three-day Honolulu eating plan with specific restaurants: Waikīkī and Kapahulu, Chinatown and Kalihi, Kaimukī, plus a North Shore day trip.',
     sitemapTitle: 'Three days of eating in Honolulu',
     render(c) {
@@ -219,7 +228,7 @@ ${c.tips(['Sunset seatings at oceanfront rooms: book 1–2 weeks ahead, longer a
   },
 
   {
-    path: '/guides/menu-glossary/', title: T('Honolulu Menu Glossary – Local Food Words Explained'), group: 'Guides',
+    path: '/guides/menu-glossary/', title: T('Honolulu Menu Glossary: Local Food Words Explained'), group: 'Guides',
     description: 'What poke, saimin, loco moco, manapua, laulau, haupia, li hing mui and Hawaiʻi fish names like ahi, ono and ʻōpakapaka mean on Honolulu menus.',
     sitemapTitle: 'Menu glossary',
     render(c) {
@@ -283,7 +292,7 @@ ${c.tips(['“Two scoop rice” is the default; ask for brown rice or “mix pla
 
   // ------------------------------------------------------------------ info pages
   {
-    path: '/faq/', title: T('Honolulu Restaurant FAQ – Reservations, Cost, Tipping, Neighborhoods'), crumb: 'FAQ',
+    path: '/faq/', title: T('Honolulu Restaurant FAQ: Cost, Tipping, Reservations'), crumb: 'FAQ',
     description: 'Answers to common questions about eating in Honolulu: reservations, costs, tipping, what Hawaiian food to try, where locals eat and what’s open late.',
     sitemapTitle: 'FAQ',
     render(c) {
@@ -295,7 +304,7 @@ ${c.tips(['“Two scoop rice” is the default; ask for brown rice or “mix pla
         ['Is Waikīkī food worth it?', 'Yes, if you pick well: {r:musubi-cafe-iyasume-waikiki} and {r:marugame-udon-waikiki} for cheap eats, {r:la-mer-halekulani} or {r:hys-steak-house-waikiki} for a big night. See <a href="/waikiki-restaurants/">Waikīkī restaurants</a>.'],
         ['Do I need reservations?', 'For fine dining and sunset tables, yes. See <a href="/guides/reservations/">the reservations guide</a>.'],
         ['What’s open late?', 'See <a href="/open-late/">open late</a>, or filter the <a href="/restaurants/?f=now">directory by open now</a>.'],
-        ['How current is this information?', 'Every restaurant page shows a “Last verified” date and the sources we used. We track <a href="/closed/">closures</a> separately. <a href="/contact/">Tell us</a> if something has changed.'],
+        ['How current is this information?', 'Every restaurant page shows a “Last verified” date and the sources we used. Restaurants confirmed as permanently closed are removed from the guide and shown on the <a href="/closed/">recently closed list</a>. <a href="/contact/">Tell us</a> if something has changed.'],
       ];
       return {
         body: `${c.head({ h1: 'Honolulu restaurant FAQ', crumbItems: [['/', 'Home'], ['/faq/', 'FAQ']] })}
@@ -317,14 +326,47 @@ ${c.tips(['“Two scoop rice” is the default; ask for brown rice or “mix pla
 <li>Every listing is checked against recent sources: the restaurant’s own site and social accounts, reservation platforms and local news.</li>
 <li>Each restaurant page shows a <strong>Last verified</strong> date and its sources.</li>
 <li>We only publish hours we could confirm. If we couldn’t, the page says so instead of guessing.</li>
-<li>Closed restaurants move to the <a href="/closed/">closures tracker</a> with the date and a note.</li>
+<li>When we confirm a restaurant has closed for good, we remove its listing and add it to the <a href="/closed/">recently closed list</a> with the date and a source.</li>
 </ul>
 <h2>Sponsored listings</h2>
 <p>Restaurants can pay for placement. Paid placements are always labeled <span class="spon">Sponsored</span>. They never change the order of “Best of” lists, award listings or the directory itself. See <a href="/advertise/">advertising</a>.</p>
 <h2>Corrections</h2>
 <p>Spotted something wrong? <a href="/contact/">Send a correction</a>. Owners can <a href="/claim/">claim their page</a> for free.</p>
 <h2>Photos</h2>
-<p>Photos are free-license images from <a href="https://unsplash.com/?utm_source=restauranthonolulu&utm_medium=referral" rel="noopener">Unsplash</a>, credited on each image. They illustrate a dish or place type and are not photos of the specific restaurant unless the caption says so.</p>
+<p>Food and dining photos are licensed stock images (Pexels license), and the Honolulu scenery photos were supplied by the site owner. Food photos illustrate a dish or occasion; they are not photos of a specific restaurant unless the page says so. Photos supplied by a restaurant are labeled on that restaurant’s page.</p>
+<h2>Ratings and reviews</h2>
+<p>We do not publish star ratings or review counts, and we do not add rating markup for search engines. For current reviews, check the restaurant’s listing on Google Maps or Tripadvisor.</p>
+<h2>Tools and data</h2>
+<p>The <a href="/meal-planner/">meal planner</a>, <a href="/near-my-hotel/">near-my-hotel finder</a> and <a href="/map/">map</a> use the same records as the restaurant pages. The data is also published as <a href="/restaurants.json">restaurants.json</a> for anyone who wants to cite it; please link back to the restaurant page you used.</p>
+</div>`;
+    },
+  },
+  {
+    path: '/privacy/', title: T('Privacy & Cookie Policy'), crumb: 'Privacy',
+    description: 'How Restaurant Honolulu handles form messages, location in the near-my-hotel finder, map tiles, and Google advertising cookies, with opt-out links.',
+    sitemapTitle: 'Privacy & cookies',
+    render(c) {
+      return `${c.head({ h1: 'Privacy and cookie policy', intro: 'Last updated October 11, 2026.', crumbItems: [['/', 'Home'], ['/privacy/', 'Privacy']] })}
+<div class="wrap narrow prose">
+<p>Restaurant Honolulu (restauranthonolulu.com) is published by <a href="https://www.eyetoad.com" rel="noopener">Eye To Ad Media</a>. This page explains what information is collected when you use the site and the choices you have.</p>
+<h2>Advertising and cookies</h2>
+<p>This site shows ads served by Google AdSense. Google and other third-party vendors use cookies to serve ads based on your previous visits to this website and other websites. Google’s use of advertising cookies enables it and its partners to serve ads to you based on your visits to this site and other sites on the internet.</p>
+<ul>
+<li>You can opt out of personalized advertising from Google in <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>.</li>
+<li>You can opt out of some third-party vendors’ use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" rel="noopener">www.aboutads.info</a>.</li>
+<li>Google explains how it uses information from sites that use its services at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</li>
+</ul>
+<p>If you opt out, you will still see ads, but they will not be personalized. You can also block or delete cookies in your browser settings.</p>
+<h2>Forms</h2>
+<p>When you send a correction, claim a listing or ask about advertising, the details you type (such as your name, email and message) are delivered to our inbox through the FormSubmit service so we can reply. We use them only to answer you and to update listings.</p>
+<h2>Your location</h2>
+<p>The <a href="/near-my-hotel/">near-my-hotel finder</a> and the <a href="/map/">map</a> can use your device’s location if you press “Use my location” and allow it. The distance calculation happens in your browser. Your location is not sent to us or stored.</p>
+<h2>Maps</h2>
+<p>The map loads only when you press “Show map”. It then requests map tiles from OpenStreetMap’s servers, which receive your IP address as part of a normal web request. See the <a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundation privacy policy</a>.</p>
+<h2>Links to other sites</h2>
+<p>Restaurant pages link to restaurants’ own websites, social accounts and map listings. Those sites have their own privacy policies.</p>
+<h2>Contact</h2>
+<p>Questions about this policy? Use the <a href="/contact/">contact form</a>.</p>
 </div>`;
     },
   },
@@ -348,7 +390,7 @@ ${area('Message', 'message', { required: true, rows: 5 })}` })}
 
   // ------------------------------------------------------------------ owners
   {
-    path: '/advertise/', title: T('Advertise Your Restaurant in Honolulu – Claim, Verified, Featured & Premium'), crumb: 'Advertise',
+    path: '/advertise/', title: T('Advertise Your Restaurant in Honolulu'), crumb: 'Advertise',
     description: 'Claim your Honolulu restaurant listing free. Verified listings from $25/month, Featured and Premium placement, SEO add-on and Pop-up Domination top placement.',
     group: 'For owners', sitemapTitle: 'Advertise',
     render(c) {
@@ -408,8 +450,8 @@ ${area('Anything we should know?', 'message')}` })}
     },
   },
   {
-    path: '/advertise/pop-up-domination/', title: T('Pop-up Domination – Top Placement for Honolulu Restaurants'), crumb: 'Pop-up Domination',
-    description: 'Pop-up Domination puts one restaurant per category at the top of matching search results, cuisine and neighborhood pages, plus a sponsored slot in the search dropdown.',
+    path: '/advertise/pop-up-domination/', title: T('Pop-up Domination – Top Placement for Restaurants'), crumb: 'Pop-up Domination',
+    description: 'Pop-up Domination puts one restaurant per category at the top of matching cuisine and neighborhood pages, plus a labeled slot in the search dropdown.',
     group: 'For owners', sitemapTitle: 'Pop-up Domination',
     render(c) {
       return `${c.head({ kicker: 'For restaurant owners', h1: 'Pop-up Domination', intro: 'One restaurant per category gets the top spot wherever that category appears on the site.', crumbItems: [['/', 'Home'], ['/advertise/', 'Advertise'], ['/advertise/pop-up-domination/', 'Pop-up Domination']] })}

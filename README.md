@@ -11,10 +11,12 @@ Every page is generated from data by a dependency-free Node script and served as
 |---|---|
 | `data/restaurants.json` | One record per restaurant (open and closed). The source of truth. |
 | `data/hale-aina.json` | Hale ʻAina Award results by year and category. |
-| `data/photos.json` | Topic photos (Unsplash, credited). Only rendered when the file exists locally. |
+| `data/photos.json` | Topic photos. Entries with `base` + `hero`/`card` sizes render as `<picture>` (AVIF + WebP) from `images/photos/`. Food photos are Pexels-licensed stock (no attribution needed), always representative; topics without a file render no image. |
+| `src/assets/tools.js` | Meal planner, near-my-hotel finder and map (loaded only on those pages). Reads the generated `restaurants.json`. |
+| `assets/vendor/leaflet-1.9.4/` | Self-hosted Leaflet (BSD-2), loaded only when a visitor presses "Show map". Tiles come from OpenStreetMap. |
 | `src/config.mjs` | Neighborhoods, cuisines, "Best of" lists, guides, plans and the Pop-up Domination offer. |
 | `src/content.mjs` | Hand-written pages (home, FAQ, guides, advertise, claim…). `{r:slug}` links a restaurant; the build fails if it's missing or closed. |
-| `src/build.mjs` | The generator. Writes HTML, `search-index.json`, `sitemap.xml` and `llms.txt` into the repo root. |
+| `src/build.mjs` | The generator. Writes HTML, `search-index.json`, `restaurants.json` (public open data), `ads.txt`, `sitemap.xml` and `llms.txt` into the repo root. Fails if a title is over 60 characters or a description over 158. |
 | `src/assets/` | `site.css` and `app.js` (search, filters, open-now). |
 
 ```sh

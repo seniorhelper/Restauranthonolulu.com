@@ -11,7 +11,7 @@ const NAV = [
   ['/guides/', 'Guides'],
 ];
 
-export function layout({ path, title, description, body, jsonld = [], ogImage, noindex = false, canonical, assetsV }) {
+export function layout({ path, title, description, body, jsonld = [], ogImage, noindex = false, canonical, assetsV, scripts = [] }) {
   const url = SITE.url + (canonical || path);
   const og = ogImage || `${SITE.url}/images/best-restaurants-honolulu.jpg`;
   const ld = jsonld.length ? `<script type="application/ld+json">${JSON.stringify(jsonld.length === 1 ? { '@context': 'https://schema.org', ...jsonld[0] } : { '@context': 'https://schema.org', '@graph': jsonld.map(({ ['@context']: _, ...x }) => x) }).replace(/</g, '\\u003c')}</script>` : '';
@@ -38,6 +38,9 @@ export function layout({ path, title, description, body, jsonld = [], ogImage, n
 <link rel="preload" href="/assets/site.css?v=${assetsV}" as="style">
 <link rel="stylesheet" href="/assets/site.css?v=${assetsV}">
 <script src="/assets/app.js?v=${assetsV}" defer></script>
+${scripts.map((s) => `<script src="${s}?v=${assetsV}" defer></script>`).join('\n')}
+<meta name="google-adsense-account" content="${SITE.adsense}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>
 ${ld}
 </head>
 <body>
@@ -71,14 +74,17 @@ function footer() {
   return `<footer class="ftr">
   <div class="ftr-in">
     <div class="ftr-brand">
-      <a href="/"><img src="/images/logo.webp" width="150" height="100" alt="Restaurant Honolulu" loading="lazy"></a>
+      <a href="/"><img src="/images/restaurant-honolulu-logo-reversed.webp" width="600" height="400" alt="Restaurant Honolulu" loading="lazy"></a>
       <p>Independent dining guide for Honolulu, Waikīkī and Oʻahu.</p>
-      <p>Advertising: <a href="${SITE.phoneHref}">${SITE.phone}</a><br><a href="/advertise/">Advertise</a> · <a href="/claim/">Claim your listing</a> · <a href="/contact/">Contact</a></p>
+      <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a></p>
     </div>
     <div>
       <h2>Explore</h2>
       <ul>
         <li><a href="/restaurants/">All restaurants</a></li>
+        <li><a href="/meal-planner/">Build your perfect meal</a></li>
+        <li><a href="/near-my-hotel/">Near my hotel</a></li>
+        <li><a href="/map/">Restaurant map</a></li>
         <li><a href="/waikiki-restaurants/">Waikīkī restaurants</a></li>
         <li><a href="/hidden-gems/">Local favorites</a></li>
         <li><a href="/five-star-dining/">Fine dining</a></li>
@@ -86,7 +92,7 @@ function footer() {
         <li><a href="/poke-honolulu/">Poke</a></li>
         <li><a href="/hale-aina-awards/">Hale ʻAina Awards</a></li>
         <li><a href="/new-openings/">New openings</a></li>
-        <li><a href="/closed/">Closed in 2026</a></li>
+        <li><a href="/closed/">Recently closed</a></li>
       </ul>
     </div>
     <div>
@@ -94,7 +100,6 @@ function footer() {
       <ul>
         <li><a href="/claim/">Claim your listing (free)</a></li>
         <li><a href="/advertise/">Advertise on this site</a></li>
-        <li><a href="/advertise/pop-up-domination/">Pop-up Domination</a></li>
         <li><a href="https://advertisingforrestaurant.com" rel="noopener">Advertising for restaurants</a></li>
         <li><a href="https://www.bigislandseo.com" rel="noopener">Hawaii SEO</a></li>
         <li><a href="https://usabusinesssearch.com" rel="noopener">USA Business Search</a></li>
@@ -114,7 +119,7 @@ function footer() {
   </div>
   <div class="legal">
     <span>© 2026 Restaurant Honolulu · Powered by <a href="https://www.eyetoad.com" rel="noopener">Eye To Ad Media</a></span>
-    <span>Made with <span aria-label="love">♥</span> in Honolulu · Need a website? <a href="tel:+18004818638">1-800-481-8638</a></span>
+    <span><a href="/privacy/">Privacy &amp; cookies</a> · <a href="/about/">How we verify</a></span>
   </div>
 </footer>`;
 }
