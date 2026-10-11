@@ -324,7 +324,7 @@ ${!isOpen ? `<div class="closed-banner" role="status"><strong>${r.status === 'te
     ${r.awards.length ? `<section class="box"><h2>Awards</h2><ul class="awards">${r.awards.sort((a, b) => (b.year || 0) - (a.year || 0)).map((a) => `<li><strong>${esc(a.name)}</strong>${a.year ? ` · ${a.year}` : ''}${a.category ? ` · ${esc(a.category)}` : ''}${a.rank ? ` · ${esc(a.rank)}` : ''}</li>`).join('')}</ul>${r.awards.some((a) => /hale/i.test(a.name)) ? '<p class="small"><a href="/hale-aina-awards/">All Hale ʻAina winners →</a></p>' : ''}</section>` : ''}
   </div>
   <aside>
-    <section class="box"><h2>Details</h2><dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></section>
+    <section class="box"><h2>Details</h2><dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl><p class="small muted lr-claim">Is this your restaurant? <a href="https://linkrestaurants.com/claim/">Claim and update this listing</a></p></section>
     <section class="box verify">
       <p><strong>Last verified:</strong> ${fmtDate(r.verified)}</p>
       ${r.confidence !== 'high' ? '<p class="small muted">Some details come from listings we could not fully confirm. Call ahead.</p>' : ''}

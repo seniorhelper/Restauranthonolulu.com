@@ -77,6 +77,7 @@ function footer() {
       <a href="/"><img src="/images/restaurant-honolulu-logo-reversed.webp" width="600" height="400" alt="Restaurant Honolulu" loading="lazy"></a>
       <p>Independent dining guide for Honolulu, Waikīkī and Oʻahu.</p>
       <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a></p>
+      <p class="ftr-claim">Own a restaurant on this guide? <a href="https://linkrestaurants.com/claim/">Claim it</a></p>
     </div>
     <div>
       <h2>Explore</h2>
