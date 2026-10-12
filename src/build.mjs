@@ -291,8 +291,8 @@ function detail(r) {
     ['Cuisine', r.cuisines.map(cuisineLink).join(', ')],
     r.address && ['Address', `${esc(r.address)}<br><a href="${esc(mapsUrl(r))}" rel="noopener">Open in Google Maps ↗</a>`],
     r.phone && ['Phone', `<a href="tel:${esc(r.phone.replace(/[^\d+]/g, ''))}">${esc(r.phone)}</a>`],
-    r.website && ['Website', `<a href="${esc(r.website)}" rel="noopener nofollow">${esc(r.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a>`],
-    r.instagram && ['Instagram', `<a href="${esc(r.instagram)}" rel="noopener nofollow">${esc(r.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, '@').replace(/\/$/, ''))}</a>`],
+    r.website && ['Website', `<a href="${esc(r.website)}" rel="${r.sponsored ? 'sponsored noopener' : 'noopener nofollow'}">${esc(r.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a>`],
+    r.instagram && ['Instagram', `<a href="${esc(r.instagram)}" rel="${r.sponsored ? 'sponsored noopener' : 'noopener nofollow'}">${esc(r.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, '@').replace(/\/$/, ''))}</a>`],
     t.parking && ['Parking', { lot: 'Own lot', street: 'Street parking', valet: 'Valet', validated: 'Validated parking', garage: 'Garage' }[t.parking] || esc(t.parking)],
   ].filter(Boolean);
   const amen = [['walk_in', 'Walk-ins welcome', 'Reservation recommended'], ['reservations', 'Takes reservations', 'No reservations'], ['kid_friendly', 'Kid-friendly', null], ['vegan_options', 'Vegan options', null], ['ocean_view', 'Ocean view', null], ['takeout', 'Takeout', null]]
@@ -311,7 +311,7 @@ ${!isOpen ? `<div class="closed-banner" role="status"><strong>${r.status === 'te
   <div class="det-cta">
     ${r.address || r.lat ? `<a class="btn" href="${esc(mapsUrl(r))}" rel="noopener">Directions</a>` : ''}
     ${r.phone && isOpen ? `<a class="btn btn-o" href="tel:${esc(r.phone.replace(/[^\d+]/g, ''))}">Call</a>` : ''}
-    ${r.website && isOpen ? `<a class="btn btn-o" href="${esc(r.website)}" rel="noopener nofollow">Website</a>` : ''}
+    ${r.website && isOpen ? `<a class="btn btn-o" href="${esc(r.website)}" rel="${r.sponsored ? 'sponsored noopener' : 'noopener nofollow'}">Website</a>` : ''}
   </div>
 </header>
 <div class="det-grid">
