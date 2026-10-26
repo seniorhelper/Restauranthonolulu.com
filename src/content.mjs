@@ -400,7 +400,7 @@ ${area('Message', 'message', { required: true, rows: 5 })}` })}
 <section class="sec">
 <div class="box"><p><strong>New:</strong> instant checkout for a <strong>Featured listing at $29/mo</strong> and <strong>Menu Pro</strong> (hosted menu, quarterly updates, NFC table tags). <a href="/for-restaurant-owners/">See owner plans →</a></p></div>
 <div class="plans">${PLANS.map((p) => `<article class="plan${p.hi ? ' plan-hi' : ''}">${p.hi ? '<p class="kick">Most chosen</p>' : ''}<h2>${p.name}</h2><p class="plan-price">${p.price ? `$${p.price}<span>${p.per}</span>` : 'Free'}</p><ul>${p.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><a class="btn${p.hi ? '' : ' btn-o'}" href="${p.id === 'claim' ? '/claim/' : `#apply`}" data-plan="${p.name}">${p.id === 'claim' ? 'Claim free' : `Choose ${p.name}`}</a></article>`).join('')}</div>
-<p class="small muted">Month-to-month, cancel anytime. Paid placements are labeled Sponsored and never change editorial rankings.</p>
+<p class="small muted">Month-to-month, <a href="https://eyetoad.com/cancel/" rel="nofollow">30-day notice to cancel</a>, all sales final (<a href="https://eyetoad.com/purchase-terms/" rel="nofollow">purchase terms</a>). Paid placements are labeled Sponsored and never change editorial rankings.</p>
 </section>
 
 <section class="sec split-box">
@@ -444,7 +444,7 @@ ${area('Message', 'message', { required: true, rows: 5 })}` })}
   ${c.form({ subject: 'Restaurant listing inquiry — RestaurantHonolulu.com', button: 'Send', fields: `${ownerFields()}
 <label>Plan<select name="package" data-plan-select>${PLANS.filter((p) => p.price).map((p) => `<option>${p.name} $${p.price}/mo</option>`).join('')}<option>Pop-up Domination</option><option>SEO add-on</option><option>Editorial feature $150/mo</option><option>Dedicated page</option></select></label>
 ${area('Anything we should know?', 'message')}` })}
-  <div class="box"><h3>What happens next</h3><ol><li>We reply within one business day.</li><li>We confirm your details and send an invoice.</li><li>Your listing goes live within two business days of payment.</li></ol><p>Prefer to call? <a href="${SITE.phoneHref}">${SITE.phone}</a></p></div>
+  <div class="box"><h3>What happens next</h3><ol><li>We reply within one business day.</li><li>We confirm your details and send an invoice.</li><li>Your listing usually goes live within two business days of payment.</li></ol><p>Prefer to call? <a href="${SITE.phoneHref}">${SITE.phone}</a></p></div>
   </div>
 </section>
 </div>`;
@@ -522,8 +522,8 @@ ${area('What needs to change?', 'changes', { rows: 5 })}
 <h2>Three ways to get in front of Oʻahu diners</h2>
 <div class="plans">
 <article class="plan"><h2>Free listing</h2><p class="plan-price">Free</p><ul><li>Correct your hours, phone, address and links</li><li>Updated “Last verified” date</li><li>We confirm you’re the owner first</li></ul><a class="btn btn-o" href="/claim/">Claim free</a></article>
-<article class="plan"><h2>Featured</h2><p class="plan-price">$29<span>/mo</span></p><ul><li>Labeled top spot on your neighborhood and cuisine pages</li><li>Featured badge, your best photo and a short pitch</li><li>Your website, menu or reservations link</li><li>Swap the photo or pitch anytime</li></ul>${buy('RST-FEATURED-M', 'Get Featured: $29/mo')}<p class="small muted">Billed monthly. Cancel anytime online.</p></article>
-<article class="plan plan-hi"><p class="kick">Best value</p><h2>Menu Pro</h2><p class="plan-price">$49<span>/mo</span></p><ul><li>Everything in Featured</li><li>Hosted mobile menu page with Menu schema</li><li>A full menu update every quarter</li><li>NFC table tags that open your menu with a tap</li><li>Live in 48 hours after you send your menu</li></ul>${buy('RST-MENUPRO-M', 'Get Menu Pro: $49/mo')}<p style="margin:.5rem 0 0">${buy('RST-MENUPRO-Y', 'Or $490/yr (2 months free)', true)}</p><p class="small muted">Menu pages are built and hosted by our sister service <a href="https://linkrestaurants.com/menu-pro/" rel="sponsored noopener">Link Restaurants</a>. Cancel anytime online.</p></article>
+<article class="plan"><h2>Featured</h2><p class="plan-price">$29<span>/mo</span></p><ul><li>Labeled top spot on your neighborhood and cuisine pages</li><li>Featured badge, your best photo and a short pitch</li><li>Your website, menu or reservations link</li><li>Swap the photo or pitch anytime</li></ul>${buy('RST-FEATURED-M', 'Get Featured: $29/mo')}<p class="small muted">Billed monthly. <a href="https://eyetoad.com/cancel/" rel="nofollow">30-day notice to cancel</a> · All sales final · <a href="https://eyetoad.com/purchase-terms/" rel="nofollow">Purchase terms</a>.</p></article>
+<article class="plan plan-hi"><p class="kick">Best value</p><h2>Menu Pro</h2><p class="plan-price">$49<span>/mo</span></p><ul><li>Everything in Featured</li><li>Hosted mobile menu page with Menu schema</li><li>A full menu update every quarter</li><li>NFC table tags that open your menu with a tap</li><li>Usually live within 48 hours after you send your menu</li></ul>${buy('RST-MENUPRO-M', 'Get Menu Pro: $49/mo')}<p style="margin:.5rem 0 0">${buy('RST-MENUPRO-Y', 'Or $490/yr (2 months free)', true)}</p><p class="small muted">Menu pages are built and hosted by our sister service <a href="https://linkrestaurants.com/menu-pro/" rel="sponsored noopener">Link Restaurants</a>. <a href="https://eyetoad.com/cancel/" rel="nofollow">30-day notice to cancel</a> · All sales final · <a href="https://eyetoad.com/purchase-terms/" rel="nofollow">Purchase terms</a>.</p></article>
 </div>
 <p class="small muted">Secure checkout on Authorize.net’s payment page; we never see your card number. Need Premium extras, Pop-up Domination or the SEO add-on? See <a href="/advertise/">all advertising options</a>.</p>
 </section>
@@ -549,7 +549,7 @@ ${area('What needs to change?', 'changes', { rows: 5 })}
 
 <section class="sec">
   <h2>How it works</h2>
-  <ol class="steps"><li><strong>Buy.</strong> Pick Featured or Menu Pro and check out securely.</li><li><strong>Send your details.</strong> Reply to the welcome email with your photo, pitch and link. For Menu Pro, add your menu as photos, a PDF or a document.</li><li><strong>Go live in 48 hours.</strong> We confirm you run the restaurant, then your spot and menu page go live.</li></ol>
+  <ol class="steps"><li><strong>Buy.</strong> Pick Featured or Menu Pro and check out securely.</li><li><strong>Send your details.</strong> Reply to the welcome email with your photo, pitch and link. For Menu Pro, add your menu as photos, a PDF or a document.</li><li><strong>Usually live in 48 hours.</strong> We confirm you run the restaurant, then your spot and menu page go live.</li></ol>
 </section>
 
 <section class="sec"><h2>Questions owners ask</h2><div class="narrow faq">${qa.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section>
