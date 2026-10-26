@@ -1,6 +1,7 @@
 // Builds the whole static site from data/*.json into the repo root.
 // Usage: node src/build.mjs            (write files)
 //        node src/build.mjs --check    (fail if output differs from what's committed)
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -9,7 +10,7 @@ import { esc, DAY_ORDER, DAY_NAMES, hoursLines, fmtRange, fmtDays, fmtTime, isLa
 import { layout } from './layout.mjs';
 import { PAGES } from './content.mjs';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
 const TODAY = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
@@ -331,7 +332,7 @@ ${!isOpen ? `<div class="closed-banner" role="status"><strong>${r.status === 'te
       ${r.sources?.length ? `<details><summary>Sources</summary><ul>${r.sources.map((s) => `<li><a href="${esc(s)}" rel="noopener nofollow">${esc(s.replace(/^https?:\/\/(www\.)?/, '').slice(0, 60))}</a></li>`).join('')}</ul></details>` : ''}
       <p class="small"><a href="/contact/?r=${r.slug}">Report a change</a></p>
     </section>
-    <p class="small muted claim-line">Own ${esc(r.name)}? <a href="/claim/?r=${r.slug}">Claim this page free</a> to correct details.</p>
+    <p class="small muted claim-line">Own ${esc(r.name)}? <a href="/claim/?r=${r.slug}">Claim this page free</a> to correct details, or <a href="/for-restaurant-owners/">get featured</a>.</p>
     <p class="small muted lr-claim">Want it kept current for you? <a href="https://linkrestaurants.com/claim/">Claim &amp; Optimize</a> from $9.99/mo.</p>
   </aside>
 </div>
@@ -711,7 +712,7 @@ function contentPages() {
   for (const pg of PAGES) {
     const ctx = { OPEN, CLOSED, BY_SLUG, grid, card, ranked, rich, photo, tips, chips, sponsorSlot, HOODS, CUIS, hoodUrl, cuisineUrl, bestUrl, BEST, GUIDES, NEIGHBORHOODS, CUISINES, PLANS, SEO_ADDON, PROMO, SITE, TODAY, esc, fmtDate, price$, head, crumbs, form, HALE_MATCH };
     const r = pg.render(ctx);
-    page(pg.path, { title: pg.title, description: pg.description, body: r.body || r, jsonld: [...(r.jsonld || []), ...(pg.crumb ? [crumbLd([['/', 'Home'], [pg.path, pg.crumb]])] : [])], noindex: pg.noindex, group: pg.group, sitemapTitle: pg.sitemapTitle, ogImage: pg.ogImage });
+    page(pg.path, { title: pg.title, description: pg.description, body: r.body || r, jsonld: [...(r.jsonld || []), ...(pg.crumb ? [crumbLd([['/', 'Home'], [pg.path, pg.crumb]])] : [])], noindex: pg.noindex, group: pg.group, sitemapTitle: pg.sitemapTitle, ogImage: pg.ogImage, scripts: pg.scripts || [] });
   }
 }
 
@@ -771,7 +772,7 @@ function sitemaps() {
 - Publisher: Eye To Ad Media (https://www.eyetoad.com)
 - Open data (JSON, open restaurants with sources and verification dates): ${SITE.url}/restaurants.json
 - Tools: meal planner ${SITE.url}/meal-planner/ · near-my-hotel finder ${SITE.url}/near-my-hotel/ · map ${SITE.url}/map/
-- Restaurant owners: ${SITE.url}/claim/ (free corrections) · ${SITE.url}/advertise/
+- Restaurant owners: ${SITE.url}/claim/ (free corrections) · ${SITE.url}/for-restaurant-owners/ (Featured $29/month, Menu Pro $49/month or $490/year; paid placements labeled) · ${SITE.url}/advertise/
 
 ## Data notes
 - Every restaurant page shows a "Last verified" date and its sources. Hours are shown only when confirmed; otherwise the page says so.

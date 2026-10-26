@@ -83,7 +83,7 @@ ${photo('skyline', { cls: 'hero-img', eager: true })}
   <div class="sec-h"><h2>Neighborhoods</h2><a href="/neighborhoods/">All neighborhoods →</a></div>
   <div class="tiles">${hoodTiles.map((n) => `<a class="tile" href="${hoodUrl(n.slug)}"><strong>${esc(n.name)}</strong><span>${esc(n.blurb)}</span></a>`).join('')}</div>
 </section>
-${sponsored.length ? `<section class="sec"><div class="sec-h"><h2>Sponsored</h2><a href="/advertise/">Advertise →</a></div>${grid(sponsored)}</section>` : ''}
+${sponsored.length ? `<section class="sec"><div class="sec-h"><h2>Sponsored</h2><a href="/for-restaurant-owners/">Get featured →</a></div>${grid(sponsored)}</section>` : ''}
 <section class="sec">
   <div class="sec-h"><h2>Award winners</h2><a href="/hale-aina-awards/">Hale ʻAina results →</a></div>
   ${grid(top)}
@@ -100,7 +100,7 @@ ${sponsored.length ? `<section class="sec"><div class="sec-h"><h2>Sponsored</h2>
 </section>
 </div>
 <div class="wrap">
-<p class="owner-line small muted">Restaurant owner? <a href="/claim/">Claim your free listing</a> to correct your details, or see <a href="/advertise/">advertising options</a>.</p>
+<p class="owner-line small muted">Own a restaurant? <a href="/for-restaurant-owners/">Get featured</a>, or <a href="/claim/">claim your free listing</a> to correct your details.</p>
 <section class="sec faq">
   <h2>Quick answers</h2>
   <details><summary>Where should a first-time visitor eat Hawaiian food?</summary><p>${c.rich('{r:helenas-hawaiian-food} in Kalihi (James Beard America’s Classic) or {r:highway-inn-kakaako}. Order kalua pig, laulau, lomi salmon and poi.')}</p></details>
@@ -398,6 +398,7 @@ ${area('Message', 'message', { required: true, rows: 5 })}` })}
       return `${c.head({ kicker: 'For restaurant owners', h1: 'Get your restaurant in front of hungry visitors', intro: `Start with a free claim. Upgrade when you want more. Questions: <a href="${SITE.phoneHref}">${SITE.phone}</a>.`, crumbItems: [['/', 'Home'], ['/advertise/', 'Advertise']] })}
 <div class="wrap">
 <section class="sec">
+<div class="box"><p><strong>New:</strong> instant checkout for a <strong>Featured listing at $29/mo</strong> and <strong>Menu Pro</strong> (hosted menu, quarterly updates, NFC table tags). <a href="/for-restaurant-owners/">See owner plans →</a></p></div>
 <div class="plans">${PLANS.map((p) => `<article class="plan${p.hi ? ' plan-hi' : ''}">${p.hi ? '<p class="kick">Most chosen</p>' : ''}<h2>${p.name}</h2><p class="plan-price">${p.price ? `$${p.price}<span>${p.per}</span>` : 'Free'}</p><ul>${p.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><a class="btn${p.hi ? '' : ' btn-o'}" href="${p.id === 'claim' ? '/claim/' : `#apply`}" data-plan="${p.name}">${p.id === 'claim' ? 'Claim free' : `Choose ${p.name}`}</a></article>`).join('')}</div>
 <p class="small muted">Month-to-month, cancel anytime. Paid placements are labeled Sponsored and never change editorial rankings.</p>
 </section>
@@ -492,10 +493,75 @@ ${area('What needs to change?', 'changes', { rows: 5 })}
 <label class="tog"><input type="checkbox" name="interested_in_upgrade" value="yes"><span>Send me upgrade options (Verified, Featured, Premium)</span></label>` })}
 <div>
   <div class="box"><h2>After you claim</h2><ol><li>We verify you by phone or email at the restaurant.</li><li>Your corrections go live, usually within one business day.</li><li>Your page gets an updated “Last verified” date.</li></ol></div>
-  <div class="box"><h2>Want more?</h2><p><strong>Verified</strong> $25/mo · <strong>Featured</strong> $75/mo · <strong>Premium</strong> $150/mo with photos, menu and deals.</p><p><a href="/advertise/">Compare plans →</a></p></div>
+  <div class="box"><h2>Want more?</h2><p><strong>Verified</strong> $25/mo · <strong>Featured</strong> $75/mo · <strong>Premium</strong> $150/mo with photos, menu and deals.</p><p>Or start at <a href="/for-restaurant-owners/">Featured from $29/mo with instant checkout</a>.</p><p><a href="/advertise/">Compare plans →</a></p></div>
   <p class="small muted">Not listed yet? Use this form too and we’ll add you. Other kinds of business: <a href="https://usabusinesssearch.com" rel="noopener">usabusinesssearch.com</a>.</p>
 </div>
 </div>`;
+    },
+  },
+  {
+    path: '/for-restaurant-owners/', title: 'For Honolulu Restaurant Owners: Get Featured from $29/mo', crumb: 'For restaurant owners',
+    description: 'Get your Honolulu restaurant Featured for $29/month, or choose Menu Pro: a Google-readable menu page, quarterly updates and NFC table tags. Free listings too.',
+    group: 'For owners', sitemapTitle: 'For restaurant owners',
+    scripts: ['https://usabusinesssearch.com/secure-checkout/checkout.js'],
+    render(c) {
+      const { SITE } = c;
+      const buy = (sku, label, alt = false) => `<button type="button" class="btn${alt ? ' btn-o' : ''} sc-buy" data-sku="${sku}" data-site="restauranthonolulu.com">${label}</button>`;
+      const qa = [
+        ['Is a basic listing really free?', 'Yes. Any open restaurant on Oʻahu can claim its listing on Restaurant Honolulu at no cost and correct hours, phone, address and links. We confirm you are the owner or manager before anything changes. Featured and Menu Pro are optional, and buying one never decides whether you stay listed.'],
+        ['What is the difference between Featured and Menu Pro?', 'Featured ($29 a month) gives you a labeled top spot on the neighborhood and cuisine pages that match your restaurant, with a photo, a short pitch and your link. Menu Pro ($49 a month or $490 a year) includes that same Featured placement plus a hosted menu page Google can read, a full menu update every quarter and NFC table tags, all done for you.'],
+        ['How is a paid spot labeled?', 'Every paid placement carries a visible Sponsored or Featured label, and the link to your website is marked rel="sponsored" as search engines ask. Paid spots never change the order of our Best of lists, the Hale ʻAina award listings or the directory itself.'],
+        ['Will it guarantee more customers?', 'No. We promise the work: a labeled top placement with your photo and link, and with Menu Pro a menu that search engines and AI assistants can read and that we keep current. Whether a visitor picks you still comes down to your food, reviews and service.'],
+        ['How fast does it go live?', 'Usually within 48 hours of receiving your photo, pitch and link. Menu Pro menu pages go live within 48 hours of getting your menu, sent as photos, a PDF or a document. We verify you run the restaurant first.'],
+        ['How is this different from the plans on the advertise page?', 'The Verified, Featured and Premium plans on the advertise page are set up by invoice after a quick conversation. The plans on this page can be bought instantly online. If you want Premium extras like a photo gallery, a deals box or Pop-up Domination, use the advertise page and we will put together the right package.'],
+        ['Can I cancel?', 'Yes. Monthly plans can be cancelled anytime online and stay live through the month you have paid for. Menu Pro yearly is one payment of $490 for twelve months, two months free compared with monthly.'],
+      ];
+      const body = `${c.head({ kicker: 'For restaurant owners', h1: 'Tourists search before they eat. Be there.', intro: `Visitors pick most Honolulu meals on their phones, often from a hotel room in Waikīkī. A free listing keeps your details right. <strong>Featured</strong> puts you at the top of the pages that match your neighborhood and cuisine. <strong>Menu Pro</strong> puts your whole menu online where Google can read it, and helps you fill more tables without paying 30% to delivery apps. Questions: <a href="${SITE.phoneHref}">${SITE.phone}</a>.`, crumbItems: [['/', 'Home'], ['/for-restaurant-owners/', 'For restaurant owners']] })}
+<div class="wrap">
+<section class="sec" id="plans">
+<h2>Three ways to get in front of Oʻahu diners</h2>
+<div class="plans">
+<article class="plan"><h2>Free listing</h2><p class="plan-price">Free</p><ul><li>Correct your hours, phone, address and links</li><li>Updated “Last verified” date</li><li>We confirm you’re the owner first</li></ul><a class="btn btn-o" href="/claim/">Claim free</a></article>
+<article class="plan"><h2>Featured</h2><p class="plan-price">$29<span>/mo</span></p><ul><li>Labeled top spot on your neighborhood and cuisine pages</li><li>Featured badge, your best photo and a short pitch</li><li>Your website, menu or reservations link</li><li>Swap the photo or pitch anytime</li></ul>${buy('RST-FEATURED-M', 'Get Featured: $29/mo')}<p class="small muted">Billed monthly. Cancel anytime online.</p></article>
+<article class="plan plan-hi"><p class="kick">Best value</p><h2>Menu Pro</h2><p class="plan-price">$49<span>/mo</span></p><ul><li>Everything in Featured</li><li>Hosted mobile menu page with Menu schema</li><li>A full menu update every quarter</li><li>NFC table tags that open your menu with a tap</li><li>Live in 48 hours after you send your menu</li></ul>${buy('RST-MENUPRO-M', 'Get Menu Pro: $49/mo')}<p style="margin:.5rem 0 0">${buy('RST-MENUPRO-Y', 'Or $490/yr (2 months free)', true)}</p><p class="small muted">Menu pages are built and hosted by our sister service <a href="https://linkrestaurants.com/menu-pro/" rel="sponsored noopener">Link Restaurants</a>. Cancel anytime online.</p></article>
+</div>
+<p class="small muted">Secure checkout on Authorize.net’s payment page; we never see your card number. Need Premium extras, Pop-up Domination or the SEO add-on? See <a href="/advertise/">all advertising options</a>.</p>
+</section>
+
+<section class="sec split-box">
+  <div>
+    <h2>Why Oʻahu is worth showing up for</h2>
+    <p>Oʻahu received <strong>5.79 million visitors by air in 2024</strong>, by far the most of any Hawaiian island, according to the state’s Data Book. In the first ten months of 2025 visitors spent <strong>$7.88 billion</strong> on the island, up 4.9%, even as arrivals dipped 1.2%.</p>
+    <p>Most of them don’t know a single restaurant name when they land. The places that show a photo, current hours and a menu they can actually read are the ones that end up on the short list.</p>
+    <p class="small muted">Sources: <a href="https://files.hawaii.gov/dbedt/economic/databook/db2024/section07.pdf" rel="noopener">DBEDT Data Book 2024, table 7.07</a> · <a href="https://dbedt.hawaii.gov/blog/25-44/" rel="noopener">DBEDT October 2025 visitor statistics</a>. Checked October 26, 2026.</p>
+  </div>
+  <div class="box">
+    <h3>What “Featured” means here</h3>
+    <ul class="checks">
+      <li>Top placement on the neighborhood and cuisine pages that fit your restaurant</li>
+      <li>A clear <span class="spon">Sponsored</span> label on every paid spot</li>
+      <li>One photo and a two or three line pitch in your words</li>
+      <li>A link to your site, marked rel="sponsored" as search engines require</li>
+      <li>Never a change to our Best of lists, award listings or directory order</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>How it works</h2>
+  <ol class="steps"><li><strong>Buy.</strong> Pick Featured or Menu Pro and check out securely.</li><li><strong>Send your details.</strong> Reply to the welcome email with your photo, pitch and link. For Menu Pro, add your menu as photos, a PDF or a document.</li><li><strong>Go live in 48 hours.</strong> We confirm you run the restaurant, then your spot and menu page go live.</li></ol>
+</section>
+
+<section class="sec"><h2>Questions owners ask</h2><div class="narrow faq">${qa.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section>
+</div>`;
+      const offers = [['Featured restaurant (monthly)', 'RST-FEATURED-M', '29.00', 'P1M'], ['Menu Pro (monthly)', 'RST-MENUPRO-M', '49.00', 'P1M'], ['Menu Pro (yearly)', 'RST-MENUPRO-Y', '490.00', 'P1Y']];
+      return {
+        body,
+        jsonld: [
+          { '@type': 'Service', name: 'Featured restaurant listings and Menu Pro', serviceType: 'Featured restaurant listing and hosted menu service', areaServed: 'Oahu, Hawaii', provider: { '@type': 'Organization', name: SITE.name, url: `${SITE.url}/`, telephone: '+1-800-481-8638' }, offers: offers.map(([name, sku, price, per]) => ({ '@type': 'Offer', name, sku, price, priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', billingDuration: per, unitText: per === 'P1M' ? 'month' : 'year' }, availability: 'https://schema.org/InStock', url: `${SITE.url}/for-restaurant-owners/#plans` })) },
+          { '@type': 'FAQPage', mainEntity: qa.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+        ],
+      };
     },
   },
   {

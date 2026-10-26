@@ -38,10 +38,11 @@ export function layout({ path, title, description, body, jsonld = [], ogImage, n
 <link rel="preload" href="/assets/site.css?v=${assetsV}" as="style">
 <link rel="stylesheet" href="/assets/site.css?v=${assetsV}">
 <script src="/assets/app.js?v=${assetsV}" defer></script>
-${scripts.map((s) => `<script src="${s}?v=${assetsV}" defer></script>`).join('\n')}
+${scripts.map((s) => `<script src="${/^https:/.test(s) ? s : `${s}?v=${assetsV}`}" defer></script>`).join('\n')}
 <meta name="google-adsense-account" content="${SITE.adsense}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>
 ${ld}
+${ga4()}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -58,7 +59,7 @@ ${ld}
   </div>
   <nav class="nav" id="nav" aria-label="Primary">
     ${NAV.map(([h, t]) => `<a href="${h}"${path.startsWith(h) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
-    <a class="nav-own" href="/advertise/">For owners</a>
+    <a class="nav-own" href="/for-restaurant-owners/">For owners</a>
   </nav>
 </header>
 <main id="main">
@@ -68,6 +69,17 @@ ${footer()}
 </body>
 </html>
 `;
+}
+
+// GA4 + lead / phone / A-B events (same snippet as ga4tag.mjs). Kept in the layout so the
+// daily GitHub Action rebuild doesn't strip the tag again.
+const GA4_EVENTS = `<script>(function(){function s(n,p){try{gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a)s('phone_click',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,60)})},true);document.addEventListener('submit',function(e){var f=e.target;if(!f||f.getAttribute('role')==='search'||/search/i.test(f.id+' '+f.className+' '+(f.action||'')))return;var id=f.id||f.getAttribute('name')||f.className||'form';if(/estimat|calc/i.test(id+' '+(f.action||'')))s('estimator_use',{form_id:id});s('generate_lead',{form_id:id})},true);window.etAB=function(n,v){var k='etab_'+n,x;try{x=localStorage.getItem(k)}catch(e){}if(!x||v.indexOf(x)<0){x=v[Math.floor(Math.random()*v.length)];try{localStorage.setItem(k,x)}catch(e){}}s('ab_view',{experiment:n,variant:x});try{gtag('set','user_properties',{['ab_'+n]:x})}catch(e){}document.documentElement.setAttribute('data-ab-'+n,x);return x}})();</script>`;
+function ga4() {
+  if (!SITE.ga4) return '';
+  return `<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${SITE.ga4}');</script>
+${GA4_EVENTS}`;
 }
 
 function footer() {
@@ -100,6 +112,7 @@ function footer() {
       <ul>
         <li><a href="/claim/">Claim your listing (free)</a></li>
         <li><a href="https://linkrestaurants.com/claim/" rel="nofollow">Claim &amp; Optimize (from $9.99/mo)</a></li>
+        <li><a href="/for-restaurant-owners/">Get featured (from $29/mo)</a></li>
         <li><a href="/advertise/">Advertise on this site</a></li>
         <li><a href="https://advertisingforrestaurant.com" rel="nofollow noopener">Advertising For Restaurant (sister site)</a></li>
         <li><a href="https://www.bigislandseo.com" rel="nofollow noopener">Big Island SEO (sister site)</a></li>

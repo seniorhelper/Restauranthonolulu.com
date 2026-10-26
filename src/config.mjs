@@ -13,6 +13,8 @@ export const SITE = {
   tz: 'Pacific/Honolulu',
   // Google AdSense (owner decision 2026-10-10): auto ads on every page, ads.txt at the root.
   adsense: 'ca-pub-3561679124556057',
+  // GA4 property (2026-10-25 rollout). Lives in the layout so the daily rebuild keeps it.
+  ga4: 'G-18618SDPV8',
 };
 
 // Pop-up Domination intro offer. The struck price is the regular price.

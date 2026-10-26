@@ -9,7 +9,7 @@
 - Publisher: Eye To Ad Media (https://www.eyetoad.com)
 - Open data (JSON, open restaurants with sources and verification dates): https://restauranthonolulu.com/restaurants.json
 - Tools: meal planner https://restauranthonolulu.com/meal-planner/ · near-my-hotel finder https://restauranthonolulu.com/near-my-hotel/ · map https://restauranthonolulu.com/map/
-- Restaurant owners: https://restauranthonolulu.com/claim/ (free corrections) · https://restauranthonolulu.com/advertise/
+- Restaurant owners: https://restauranthonolulu.com/claim/ (free corrections) · https://restauranthonolulu.com/for-restaurant-owners/ (Featured $29/month, Menu Pro $49/month or $490/year; paid placements labeled) · https://restauranthonolulu.com/advertise/
 
 ## Data notes
 - Every restaurant page shows a "Last verified" date and its sources. Hours are shown only when confirmed; otherwise the page says so.
@@ -132,3 +132,4 @@
 - [Advertise](https://restauranthonolulu.com/advertise/)
 - [Pop-up Domination](https://restauranthonolulu.com/advertise/pop-up-domination/)
 - [Claim your listing](https://restauranthonolulu.com/claim/)
+- [For restaurant owners](https://restauranthonolulu.com/for-restaurant-owners/)

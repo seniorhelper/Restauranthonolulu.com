@@ -1,8 +1,9 @@
 // Post-build checks: every internal link resolves, JSON-LD parses, data is well-formed.
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const files = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/.generated.json'), 'utf8'));
 const errors = [];
 const exists = (u) => {
