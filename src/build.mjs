@@ -376,7 +376,7 @@ ${OPEN.some((r) => r.sponsored) ? '' : sponsorSlot(() => false, 'in Honolulu')}
 }
 
 // ---------- list pages ----------
-function listPage({ p, title, description, h1, intro, kicker, photoTopic, list, crumbItems, extra = '', tipList, sponsorMatch, sponsorWhere, group, sitemapTitle, related = [] }) {
+function listPage({ p, title, description, h1, intro, kicker, photoTopic, list, crumbItems, extra = '', tipList, sponsorMatch, sponsorWhere, group, sitemapTitle, canonical, related = [] }) {
   const body = `${head({ kicker, h1, intro, photoTopic, crumbItems })}
 <div class="wrap">
 ${related.length ? chips(related) : ''}
@@ -385,7 +385,7 @@ ${grid(list)}
 ${extra}
 ${tips(tipList)}
 </div>`;
-  page(p, { title, description, body, jsonld: [crumbLd(crumbItems), itemListLd(list, title.split(' | ')[0])], group, sitemapTitle });
+  page(p, { title, description, body, jsonld: [crumbLd(crumbItems), itemListLd(list, title.split(' | ')[0])], group, sitemapTitle, canonical });
 }
 
 function neighborhoods() {
@@ -444,7 +444,7 @@ function bestPages() {
       p, h1: esc(b.h1), intro: esc(b.intro), photoTopic: b.photo, kicker: 'Best of',
       title: T(b.title), description: namesDesc(`${b.title}: `, list, 'Hours, prices and maps.'),
       list, crumbItems: [['/', 'Home'], ['/best/', 'Best of'], [p, b.h1]],
-      sponsorMatch: b.match, sponsorWhere: 'that fits this list', group: 'Best of', sitemapTitle: b.title,
+      sponsorMatch: b.match, sponsorWhere: 'that fits this list', group: 'Best of', sitemapTitle: b.title, canonical: b.canonical,
       extra: list.length ? '<p class="small muted">Ranked by awards, track record and how recently we verified details. Paid listings are labeled Sponsored and never affect this order.</p>' : '',
     });
   }
